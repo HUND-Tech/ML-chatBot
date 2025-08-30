@@ -207,18 +207,18 @@ def animales(): #Q3
     else: #salvajes-----------------------------------------------------
         r = pedir_si_no("Q1: ¿Es un mamífero?")
         if r == "s":
-            r2 = pedir_si_no("Q2: ¿Es carnívoro?")
-            if r2 == "s":
-                r3 = pedir_si_no("Q3: ¿Es grande (ej. león, tigre, oso)?")
-                if r3 == "s":
+            r = pedir_si_no("Q2: ¿Es carnívoro?")
+            if r == "s":
+                r = pedir_si_no("Q3: ¿Es grande (ej. león, tigre, oso)?")
+                if r == "s":
                     print("Identificado: Mamífero carnívoro grande (león, tigre, oso, lobo, etc.)")
                 else:
                     print("Identificado: Mamífero carnívoro pequeño/mediano (zorro, lince, hurón, etc.)")
             else:
-                r3 = pedir_si_no("Q3: ¿Es herbívoro?")
-                if r3 == "s":
-                    r4 = pedir_si_no("Q4: ¿Es muy grande (elefante, rinoceronte, jirafa)?")
-                    if r4 == "s":
+                r = pedir_si_no("Q3: ¿Es herbívoro?")
+                if r == "s":
+                    r = pedir_si_no("Q4: ¿Es muy grande (elefante, rinoceronte, jirafa)?")
+                    if r == "s":
                         print("Identificado: Mamífero herbívoro grande")
                     else:
                         print("Identificado: Mamífero herbívoro mediano (ciervo, cebra, caballo salvaje, etc.)")
@@ -226,21 +226,21 @@ def animales(): #Q3
                     print("Identificado: Mamífero omnívoro (mapache, cerdo salvaje, oso omnívoro, etc.)")
             return
 
-        # 2️⃣ Aves salvajes
+        #  Aves salvajes
         r = pedir_si_no("Q1: ¿Es un ave?")
         if r == "s":
-            r2 = pedir_si_no("Q2: ¿Es rapaz (caza otros animales)?")
-            if r2 == "s":
+            r = pedir_si_no("Q2: ¿Es rapaz (caza otros animales)?")
+            if r == "s":
                 print("Identificado: Ave rapaz (águila, halcón, búho, etc.)")
             else:
-                r3 = pedir_si_no("Q3: ¿Vive principalmente en agua?")
-                if r3 == "s":
+                r = pedir_si_no("Q3: ¿Vive principalmente en agua?")
+                if r == "s":
                     print("Identificado: Ave acuática salvaje (pato, cisne, pingüino, etc.)")
                 else:
                     print("Identificado: Ave terrestre o migratoria (paloma salvaje, gaviota, colibrí, etc.)")
             return
 
-        # 3️⃣ Reptiles salvajes
+        #  Reptiles salvajes
         r = pedir_si_no("Q1: ¿Es un reptil?")
         if r == "s":
             r2 = pedir_si_no("Q2: ¿Tiene caparazón?")
@@ -254,7 +254,7 @@ def animales(): #Q3
                     print("Identificado: Reptil no venenoso (iguana, lagarto, etc.)")
             return
 
-        # 4️⃣ Anfibios salvajes
+        # Anfibios salvajes
         r = pedir_si_no("Q1: ¿Es un anfibio?")
         if r == "s":
             r2 = pedir_si_no("Q2: ¿Vive principalmente en agua?")
@@ -267,8 +267,8 @@ def animales(): #Q3
         # 5️⃣ Peces salvajes
         r = pedir_si_no("Q1: ¿Es un pez?")
         if r == "s":
-            r2 = pedir_si_no("Q2: ¿Es de agua salada?")
-            if r2 == "s":
+            r = pedir_si_no("Q2: ¿Es de agua salada?")
+            if r == "s":
                 print("Identificado: Pez de mar (atún, tiburón, pez loro, etc.)")
             else:
                 print("Identificado: Pez de agua dulce (trucha, carpa, pez gato, etc.)")
@@ -277,10 +277,10 @@ def animales(): #Q3
         # 6️⃣ Invertebrados salvajes
         r = pedir_si_no("Q1: ¿Es un invertebrado (araña, insecto, molusco, etc.)?")
         if r == "s":
-            r2 = pedir_si_no("Q2: ¿Es artrópodo (insecto, araña, cangrejo)?")
-            if r2 == "s":
-                r3 = pedir_si_no("Q3: ¿Es venenoso?")
-                if r3 == "s":
+            r = pedir_si_no("Q2: ¿Es artrópodo (insecto, araña, cangrejo)?")
+            if r == "s":
+                r = pedir_si_no("Q3: ¿Es venenoso?")
+                if r == "s":
                     print("Identificado: Artrópodo venenoso (tarántula, escorpión, avispa, etc.)")
                 else:
                     print("Identificado: Artrópodo no venenoso (mariposa, abeja, cangrejo, etc.)")
