@@ -96,21 +96,21 @@ def rama_fenomeno():
     print("No se pudo ubicar con las preguntas.")
 
 def rama_objeto():
-    r = pedir_si_no("Q7: ¿Es un animal?")
+    r = pedir_si_no("Q2: ¿Es un objeto natural (no fabricado por humanos)?")
     if r == "s":
-        #animales()
+        #obj_natural()
         return
-    r = pedir_si_no("Q8: ¿Es una planta?")
+    r = pedir_si_no("Q3: ¿Es artificial (fabricado por humanos)?")
     if r == "s":
-        # plantas()
+        #obj_artificial()
         return
-    r = pedir_si_no("Q9: ¿Es un hongo?")
+    r = pedir_si_no("Q5: ¿Es un producto de consumo?")
     if r == "s":
-        # hongo()
+        #consumo()
         return
-    r = pedir_si_no("Q10: ¿Es un microorganismo?")
+    r = pedir_si_no("Q6: ¿Es un residuo o desecho?")
     if r == "s":
-        # microorganismos()
+        #residuos()
         return
     print("No se pudo ubicar con las preguntas.")
 
@@ -291,7 +291,13 @@ def animales(): #Q3
         # Fallback
         print("No pude identificar el animal salvaje.")
 
-
+def obj_natural():#Q2
+    #mineral 
+    r = pedir_si_no("Q3: ¿Es un mineral?")
+    if r == "s":
+        #minerales
+        r = pedir_si_no("Q4: ¿Es una roca o mineral?")
+       
 
 
 
