@@ -264,7 +264,7 @@ def animales(): #Q3
                 print("Identificado: Anfibio terrestre (sapos, algunas ranas, etc.)")
             return
 
-        # 5️⃣ Peces salvajes
+        #  Peces salvajes
         r = pedir_si_no("Q1: ¿Es un pez?")
         if r == "s":
             r = pedir_si_no("Q2: ¿Es de agua salada?")
@@ -274,7 +274,7 @@ def animales(): #Q3
                 print("Identificado: Pez de agua dulce (trucha, carpa, pez gato, etc.)")
             return
 
-        # 6️⃣ Invertebrados salvajes
+        #  Invertebrados salvajes
         r = pedir_si_no("Q1: ¿Es un invertebrado (araña, insecto, molusco, etc.)?")
         if r == "s":
             r = pedir_si_no("Q2: ¿Es artrópodo (insecto, araña, cangrejo)?")
