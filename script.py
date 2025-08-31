@@ -24,17 +24,17 @@ def rama_seres_vivos():
     if r == "s":
         animales()
         return
-    r = pedir_si_no("Q4: ¿Es una planta?")
+    r = pedir_si_no("Q4: ¿Es una planta, fruta, verdura o semilla?")
     if r == "s":
-        # plantas()
+        plantas()
         return
     r = pedir_si_no("Q5: ¿Es un hongo?")
     if r == "s":
-        # hongo()
+        hongos()
         return
     r = pedir_si_no("Q6: ¿Es un microorganismo?")
     if r == "s":
-        # microorganismos()
+        microorganismos()
         return
     print("No se pudo ubicar con las preguntas.")
 
@@ -242,31 +242,35 @@ def identificar_mamifero():  #salvajes mamiferos
                     if r == "s":
                         print("Pensaste en Canguro")
                     else:
-                        r = pedir_si_no("Q11: ¿Tiene cornamenta o cuernos ramificados?")
+                        r = pedir_si_no("Q11: ¿Está adaptado a vivir en desiertos y puede pasar largos períodos sin agua?")
                         if r == "s":
-                            r = pedir_si_no("Q12: ¿Es esbelto y ágil con astas ramificadas?")
-                            if r == "s":
-                                print("Pensaste en Venado")
-                            else:
-                                print("Pensaste en Antílope")
+                            print("Pensaste en Camello")
                         else:
-                            r = pedir_si_no("Q12: ¿Tiene rayas en el cuerpo?")
+                            r = pedir_si_no("Q11: ¿Tiene cornamenta o cuernos ramificados?")
                             if r == "s":
-                                print("Pensaste en Cebra")
-                            else:
-                                r = pedir_si_no("Q13: ¿Tiene púas largas o defensas en el cuerpo?")
+                                r = pedir_si_no("Q12: ¿Es esbelto y ágil con astas ramificadas?")
                                 if r == "s":
-                                    print("Pensaste en Puercoespín")
+                                    print("Pensaste en Venado")
                                 else:
-                                    r = pedir_si_no("Q13: ¿Es un roedor grande semiacuático?")
+                                    print("Pensaste en Antílope")
+                            else:
+                                r = pedir_si_no("Q12: ¿Tiene rayas en el cuerpo?")
+                                if r == "s":
+                                    print("Pensaste en Cebra")
+                                else:
+                                    r = pedir_si_no("Q13: ¿Tiene púas largas o defensas en el cuerpo?")
                                     if r == "s":
-                                        print("Pensaste en Carpincho")
+                                        print("Pensaste en Puercoespín")
                                     else:
-                                        r = pedir_si_no("Q13: ¿Es robusto y terrestre con hocico ancho?")
+                                        r = pedir_si_no("Q13: ¿Es un roedor grande semiacuático?")
                                         if r == "s":
-                                            print("Pensaste en Jabalí")
+                                            print("Pensaste en Carpincho")
                                         else:
-                                            print("Herbívoro terrestre pequeño/mediano poco común")
+                                            r = pedir_si_no("Q13: ¿Es robusto y terrestre con hocico ancho?")
+                                            if r == "s":
+                                                print("Pensaste en Jabalí")
+                                            else:
+                                                print("Herbívoro terrestre pequeño/mediano poco común")
         else:
             # Omnívoros
             r = pedir_si_no("Q8: ¿Se alimenta de plantas y ocasionalmente carne?")
@@ -328,7 +332,7 @@ def animales(): #Q3
             if r == "s":
                 print("Ave pequeña doméstica (canario, periquito, paloma).")
             else:
-                r = pedir_si_no("Q8: ¿Hace cacareo o graznido?")  # gallina, pato, ganso
+                r = pedir_si_no("Q8: ¿Hace cacareo o graznido?")
                 if r == "s":
                     print("Ave doméstica grande (gallina, pato, ganso).")
                 else:
@@ -346,7 +350,7 @@ def animales(): #Q3
 
         r = pedir_si_no("¿Es un reptil sin caparazón")
         if r == "s":
-            print("Reptil doméstico (gecko, iguana, otros pequeños reptiles).")
+            print("Pensaste en un reptil doméstico como una iguana, o en un reptil pequeno).")
             return
 
         r = pedir_si_no("¿Es un reptil con caparazón (tortuga terrestre o acuática)?")
@@ -464,7 +468,7 @@ def animales(): #Q3
                             else:
                                 print("Pensaste en una serpiente venenosa")
                 else:  # Reptiles no venenosos
-                    r = pedir_si_no("Q9: ¿Vive principalmente en ríos, lagos o humedales (ej. manglares),tiene cuerpo robusto  y es un carnívoro acuático?")
+                    r = pedir_si_no("Q9: ¿Vive principalmente en ríos, lagos o humedales (ej. manglares),con dientes visibles incluso con la boca cerrada?y es un carnívoro acuático?")
                     if r == "s":
                         r = pedir_si_no("Q10: ¿Tiene hocico ancho y fuerte mandíbula (Cocodrilo)?")
                         if r == "s":
@@ -679,7 +683,300 @@ def animales(): #Q3
         # Fallback
         print("No pude identificar el animal salvaje.")
 
+def frutas():
+    r = pedir_si_no("Q5: ¿Es cítrica?")
+    if r == "s":
+        r = pedir_si_no("Q6: ¿Tiene un color anaranjado?")
+        if r == "s":
+            r = pedir_si_no("Q7: ¿Es más pequeña y fácil de pelar?")
+            if r == "s":
+                print("¡Pensaste en una mandarina!")
+            else:
+                print("¡Pensaste en una naranja!")
+        else:
+            r = pedir_si_no("Q8: ¿Es de color amarillo o verde fuerte?")
+            if r == "s":
+                r = pedir_si_no("Q9: ¿Es muy ácido y pequeño y con color verde?")
+                if r == "s":
+                    print("¡Pensaste en un limón!")
+                else:
+                    print("¡Pensaste en una lima!")
+            else:
+                r = pedir_si_no("Q10: ¿Es de color morado/rosado por dentro y más grande?")
+                if r == "s":
+                    print("¡Pensaste en una toronja!")
+                else:
+                    r = pedir_si_no("Q11: ¿Tiene muchas semillas pequeñas y un sabor muy intenso?")
+                    if r == "s":
+                        print("¡Pensaste en un maracuyá!")
+                    else:
+                        print("Podría ser otra fruta cítrica menos común.")
+    else:
+        # No es cítrica
+        r = pedir_si_no("Q6: ¿Es una fruta de color rojo?")
+        if r == "s":
+            r = pedir_si_no("Q7: ¿Es conocida como la fruta prohibida en cuentos o muy común en mercados?")
+            if r == "s":
+                print("¡Pensaste en una manzana roja!")
+            else:
+                r = pedir_si_no("Q8: ¿Es pequeña y tiene semillas visibles por fuera?")
+                if r == "s":
+                    r = pedir_si_no("Q9: ¿Se usa mucho en postres como pasteles o helados?")
+                    if r == "s":
+                        print("¡Pensaste en una fresa!")
+                    else:
+                        # Aquí insertamos la pregunta del jitomate
+                        r= pedir_si_no("Q9: ¿Se consume principalmente como ingrediente en comidas saladas o salsas rojas?")
+                        if r== "s":
+                            print("¡Pensaste en un jitomate!")
+                        else:
+                            print("¡Pensaste en una frutilla similar a la fresa pero menos común!")  # opcional
+                else:
+                    r = pedir_si_no("Q10: ¿Es dura por fuera y al abrirla tiene muchas semillas internas jugosas?")
+                    if r == "s":
+                        print("¡Pensaste en una granada!")
+                    else:
+                        r = pedir_si_no("Q11: ¿Es muy pequeña y redonda, generalmente consumida de a una o en postres?")
+                        if r == "s":
+                            print("¡Pensaste en una cereza!")
+                        else:
+                            r = pedir_si_no("Q12: ¿Es más oscura, como morada o negra?")
+                            if r == "s":
+                                r = pedir_si_no("Q13: ¿Se usa en mermeladas o jugos?")
+                                if r == "s":
+                                    print("¡Pensaste en una mora!")
+                                else:
+                                    print("¡Pensaste en un arándano!")
+        else:
+            # No es roja
+            r = pedir_si_no("Q12: ¿Es una fruta grande?")
+            if r == "s":
+                r = pedir_si_no("Q13: ¿Es verde por fuera y roja por dentro con semillas negras?")
+                if r == "s":
+                    print("¡Pensaste en una sandía!")
+                else:
+                    r = pedir_si_no("Q14: ¿Es amarilla por dentro y con cáscara dura, con una corona en la parte superior?")
+                    if r == "s":
+                        print("¡Pensaste en una piña!")
+                    else:
+                        r = pedir_si_no("Q15: ¿Es verde claro por fuera, alargada y anaranjada por dentro con semillas negras en el centro?")
+                        if r == "s":
+                            print("¡Pensaste en una papaya!")
+                        else:
+                            r = pedir_si_no("Q16: ¿Es redonda, con piel rugosa o reticulada, y pulpa anaranjada o verde por dentro?")
+                            if r == "s":
+                                print("¡Pensaste en un melón!")
+                            else:
+                                r = pedir_si_no("Q19: ¿Tiene cáscara dura, fibrosa, marrón por fuera y blanco por dentro?")
+                                if r == "s":
+                                    print("¡Pensaste en un coco!")
+                                else:
+                                    print("No se logró adivinar la fruta, revisa las características.")
+            else:
+                # No es grande
+                r = pedir_si_no("Q16: ¿Es alargada y de color amarillo?")
+                if r == "s":
+                    print("¡Pensaste en un plátano!")
+                else:
+                    r = pedir_si_no("Q17: ¿Es de cáscara marrón y dura?")
+                    if r == "s":
+                        print("¡Pensaste en un coco!")
+                    else:
+                        r = pedir_si_no("Q18: ¿Tiene cáscara fina, vellosa y a veces nombrada como melocoton?")
+                        if r == "s":
+                            print("¡Pensaste en un durazno!")
+                        else:
+                            r = pedir_si_no("Q19: ¿Es verde o café por fuera y verde por dentro con semillas negras?")
+                            if r == "s":
+                                print("¡Pensaste en un kiwi!")
+                            else:
+                                r = pedir_si_no("Q20: ¿Se encuentra en racimos, son pequenas y redondeadas?")
+                                if r == "s":
+                                    print("¡Pensaste en una uva!")
+                                else:
+                                    print("¡Podría ser una pera, ciruela o higo!")
+        return
 
+def verduras():
+    # Verduras y hortalizas más comunes con preguntas más específicas
+    r = pedir_si_no("Q7: ¿Se consume principalmente la hoja de la planta?")
+    if r == "s":
+        r = pedir_si_no("Q6a1: ¿Tiene hojas verdes grandes y se usa en ensaladas?")
+        if r == "s":
+            print("¡Pensaste en Lechuga!")
+        else:
+            r = pedir_si_no("Q6a2: ¿Se cocina frecuentemente en sopas o guisos?")
+            if r == "s":
+                print("¡Pensaste en Espinaca o Acelga!")
+            else:
+                print("¡Pensaste en Rúcula, Berro o Endibia!")
+
+    else:
+        r = pedir_si_no("Q6b: ¿Se consume el tallo o raíz de la planta o se categoriza como un tubérculo ?")
+        if r == "s":
+            r = pedir_si_no("Q6b1: ¿Es un tubérculo de color naranja y crujiente?")
+            if r == "s":
+                print("¡Pensaste en Zanahoria!")
+            else:
+                r = pedir_si_no("Q6b2: ¿Es un tubérculo redondo y se encuentra bajo tierra?")
+                if r == "s":
+                    r = pedir_si_no("Q6b2a: ¿Es de color amarillo o blanco?")
+                    if r == "s":
+                        print("¡Pensaste en Papa!")
+                    else:
+                        print("¡Pensaste en Nabo o Remolacha!")
+                else:
+                    r = pedir_si_no("Q6b3: ¿Es un bulbo con aroma fuerte?")
+                    if r == "s":
+                        r2 = pedir_si_no("Q6b3a: ¿Al pelarlo normalmente hace llorar?")
+                        if r2 == "s":
+                            print("¡Pensaste en Cebolla!")
+                        else:
+                            r3 = pedir_si_no("Q6b3b: ¿Está compuesto por pequeños dientes comestibles?")
+                            if r3 == "s":
+                                print("¡Pensaste en Ajo!")
+                            else:
+                                print("¡Pensaste en Puerro o Espárrago!")
+                    else:
+                        r4 = pedir_si_no("Q6b4: ¿Es alargado y de color verde?")
+                        if r4 == "s":
+                            print("¡Pensaste en Pepino o Pepinillo!")
+                        else:
+                            r5 = pedir_si_no("Q6b5: ¿Es grande y de color morado o violeta?")
+                            if r5 == "s":
+                                print("¡Pensaste en Berenjena!")
+                            else:
+                                r6 = pedir_si_no("Q6b6: ¿Es redonda, roja y usualmente se usa en salsas?")
+                                if r6 == "s":
+                                    print("¡Pensaste en Tomate!")
+                                else:
+                                    print("¡Pensaste en Pimiento, Chayote o Calabacín!")
+        return
+
+def cereales():
+    # Cereales y granos
+    r = pedir_si_no("Q7: ¿Se consume principalmente como grano entero o molido?")
+    if r == "s":
+        r = pedir_si_no("Q8: ¿Es de color blanco o ligeramente amarillo y se consume cocido en casi todo el mundo?")
+        if r == "s":
+            print("¡Pensaste en arroz!")
+        else:
+            r = pedir_si_no(
+                "Q9: ¿Se usa mucho para hacer tortillas, tamales o como base de platillos en México y América Latina?")
+            if r == "s":
+                print("¡Pensaste en maíz!")
+            else:
+                r = pedir_si_no("Q10: ¿Se utiliza principalmente para hacer pan, galletas y pasteles?")
+                if r == "s":
+                    print("¡Pensaste en trigo!")
+                else:
+                    r = pedir_si_no("Q11: ¿Es oscuro, se consume en guisos, sopas o ensaladas como legumbre?")
+                    if r == "s":
+                        r = pedir_si_no("Q12: ¿Es pequeño y redondo, muy común en cocina mexicana?")
+                        if r == "s":
+                            print("¡Pensaste en frijol!")
+                        else:
+                            r = pedir_si_no("Q13: ¿Es un grano pequeño, usado en sopas, ensaladas o como complemento de otros platillos?")
+                            if r == "s":
+                                print("¡Pensaste en lenteja o garbanzo!")
+                            else:
+                                r = pedir_si_no("Q14: ¿Es pequeño, redondo y se considera un superalimento?")
+                                if r == "s":
+                                    r = pedir_si_no("Q15: ¿Es plano y redondo, parecido a semillas de amaranto?")
+                                    if r == "s":
+                                        print("¡Pensaste en amaranto!")
+                                    else:
+                                        print("¡Pensaste en chía!")
+        return
+
+def plantas():
+    r = pedir_si_no("Q4: ¿Es comestible?")
+    if r == "s":
+        r=pedir_si_no("Q5: ¿Es una fruta?")
+        if r == "s":
+            frutas()
+        else:
+            r=pedir_si_no("Q6: ¿Es una verdura u hortaliza?")
+            if r == "s":
+                print("")
+                verduras()
+            else:
+                r=pedir_si_no("Q7: ¿Es un cereal o grano o leguminosa?")
+                if r == "s":
+                    print("")
+                    cereales()
+                else:
+                    r=pedir_si_no("Q9: ¿Es una hierba comestible (condimento/especia)?")
+                    if r == "s":
+                        print("")
+                    else:
+                        print("No se logro advinar que oebsaste")
+
+    else:
+        r=pedir_si_no("Q5: ¿Es ornamental (flores o de jardín)?")
+        if r == "s":
+            print("Pensaste en flores o arboles decorativos")
+        else:
+            r=pedir_si_no("Q6: ¿Se usa con fines medicinales o industriales?")
+            if r == "s":
+                print("pensaste en ")
+            else:
+                print("pensaste en un tipo de planta muy poco comun")
+
+
+def hongos():
+    r = pedir_si_no("Q1: ¿Es comestible sin riesgos para la salud?")
+    if r == "s":
+        r = pedir_si_no("Q2: ¿Es pequeño y se consume en ensaladas o sopas comunes?")
+        if r == "s":
+            print("¡Pensaste en champiñón!")
+        else:
+            r = pedir_si_no("Q3: ¿Es grande y se usa en platos gourmet o al horno?")
+            if r == "s":
+                print("¡Pensaste en portobello!")
+            else:
+                r = pedir_si_no("Q4: ¿Tiene forma de abanico o crece en racimos en la madera?")
+                if r == "s":
+                    print("¡Pensaste en hongo ostra!")
+                else:
+                    print("¡Pensaste en setas comestibles variadas!")
+    else:
+        r = pedir_si_no("Q5: ¿Es de color rojo con puntos blancos o de apariencia llamativa?")
+        if r == "s":
+            print("¡Pensaste en Amanita muscaria (venenoso)!")
+        else:
+            r = pedir_si_no("Q6: ¿Es oscuro y se utiliza en cocina gourmet como condimento?")
+            if r == "s":
+                print("¡Pensaste en trufa!")
+            else:
+                print("¡Pensaste en otro hongo venenoso o tóxico!")
+
+def microorganismos():
+    r = pedir_si_no("Q1: ¿Es visible solo con microscopio?")
+    if r == "s":
+        r = pedir_si_no("Q2: ¿Vive principalmente en agua o ambientes húmedos?")
+        if r == "s":
+            r = pedir_si_no("Q3: ¿Realiza fotosíntesis y produce oxígeno?")
+            if r == "s":
+                print("¡Pensaste en algas microscópicas!")
+            else:
+                print("¡Pensaste en protozoos o mohos acuáticos!")
+        else:
+            r = pedir_si_no("Q4: ¿Se utiliza en alimentos como pan, yogurt o cerveza?")
+            if r == "s":
+                print("¡Pensaste en bacterias o levaduras beneficiosas!")
+            else:
+                r = pedir_si_no("Q5: ¿Puede causar enfermedades?")
+                if r == "s":
+                    r = pedir_si_no("Q6: ¿Se replica solo dentro de células y no con nutrición propia?")
+                    if r == "s":
+                        print("¡Pensaste en un virus!")
+                    else:
+                        print("¡Pensaste en bacterias patógenas!")
+                else:
+                    print("¡Pensaste en otros microorganismos benignos!")
+    else:
+        print("No se pudo identificar el microorganismo.")
 
 
 
@@ -704,7 +1001,7 @@ def main():
     # Q1
     r = pedir_si_no("Q1: ¿Es algo abstracto o intangible (idea, emoción, número, concepto)?")
     if r == "s":
-        # Agotar rama Abstracto/Intangible
+        # Agotar rama Abstracto/Intangibleds
         rama_abstracto()
         # Entraste en: Abstracto/Intangible -> (aquí agotar preguntas de esa categoría).
         return
