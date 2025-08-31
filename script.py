@@ -293,7 +293,7 @@ def animales(): #Q3
 
 def obj_natural():#Q2
     
-   #minerales
+   #MINERALES
     r = pedir_si_no("Q3: ¿Es un mineral?")
     if r == "s":
         
@@ -395,23 +395,23 @@ def obj_natural():#Q2
                         print("Otro mineral no metálico (fluorita, apatito, feldespatos, etc.)")
 
 
-    #rocas
-    else:
+    #ROCAS
+    elif pedir_si_no("Q4: ¿Es una roca ?") == "s":
         
          # tipos principales
-        r = pedir_si_no("Q4: ¿Es ígnea ?") #(formada por magma o lava)
+        r = pedir_si_no("Q5: ¿Es ígnea ?") #(formada por magma o lava)
         if r == "s":
             
             # igneas
-            r = pedir_si_no("Q5: ¿Se formó en la superficie?")
+            r = pedir_si_no("Q6: ¿Se formó en la superficie?")
             if r == "s":
                 
                 # extrusivas
-                r = pedir_si_no("Q6: ¿Es negra y de grano fino?")
+                r = pedir_si_no("Q7: ¿Es negra y de grano fino?")
                 if r == "s":
                     print("Basalto")
                 else:
-                    r = pedir_si_no("Q7: ¿Tiene bordes filosos?")
+                    r = pedir_si_no("Q8: ¿Tiene bordes filosos?")
                     if r == "s":
                         print("Obsidiana")
                     else:
@@ -471,6 +471,104 @@ def obj_natural():#Q2
                             print("Cuarcita")
                     else:
                         print("Otra roca metamórfica menos común")
+                        
+    #RESTOS ORGÁNICOS NO VIVOS                    
+    r = pedir_si_no("Q4: ¿Proviene de un ser vivo?")
+    if r == "s":
+        
+        # de acuerdo a su oirgen
+        r = pedir_si_no("Q5: Su origen es vegetal?")
+        if r == "s":
+            
+            # origen Vegetal
+            r = pedir_si_no("Q6: ¿Está fosilizado?") # (petrificado, mineralizado)
+            if r == "s":
+                r = pedir_si_no("Q7: ¿Es un tronco?")
+                if r == "s":
+                    print("Tronco petrificado")
+                else:
+                    r = pedir_si_no("Q8: ¿Es una hoja impresa en roca?")
+                    if r == "s":
+                        print("Hoja fósil")
+                    else:
+                        r = pedir_si_no("Q9: ¿Es resina fosilizada?")
+                        if r == "s":
+                            print("Ámbar")
+                        else:
+                            print("Otro fósil vegetal")
+            else:
+                
+                # No fosilizado
+                r = pedir_si_no("Q7: ¿Es leñoso?") #(tronco, rama)
+                if r == "s":
+                    r = pedir_si_no("Q8: ¿Presenta anillos de crecimiento visibles?")
+                    if r == "s":
+                        print("Madera")
+                    else:
+                        print("Fragmento de tronco o rama")
+                else:                 
+                        r = pedir_si_no("Q8: ¿Está carbonizado?")
+                        if r == "s":
+                            print("Carbón vegetal")
+                        else:
+                            print("Otro resto vegetal")
+
+        else:
+            
+            # de orugen Animal fosilizado
+            r = pedir_si_no("Q12: ¿Está fosilizado?")
+            if r == "s":
+                r = pedir_si_no("Q13: ¿Es un hueso?")
+                if r == "s":
+                    r = pedir_si_no("Q14: ¿Es un hueso grande?") #(ej. fémur, mandíbula)
+                    if r == "s":
+                        print("Hueso fósil grande")
+                    else:
+                        print("Hueso fósil pequeño")
+                else:
+                    r = pedir_si_no("Q15: ¿Es una concha?")
+                    if r == "s":
+                        r = pedir_si_no("Q16: ¿Es bivalva?")
+                        if r == "s":
+                            print("Concha fósil bivalva")
+                        else:
+                            print("Caracol fósil (concha univalva)")
+                    else:
+                        r = pedir_si_no("Q17: ¿Es un diente fosilizado?")
+                        if r == "s":
+                            print("Diente fósil")
+                        else:
+                            print("Otro fósil animal")
+            else:
+                
+                # de origen animal no fosilizado
+                r = pedir_si_no("Q13: ¿Es un fragmento completo?")
+                if r == "s":
+                    r = pedir_si_no("Q14: ¿Es un hueso largo?") #(como fémur, húmero)
+                    if r == "s":
+                        r = pedir_si_no("Q15: ¿Es parte de una extremidad superior?")
+                        if r == "s":
+                            print("Un hueso de húmero")
+                        else:
+                            print("Un hueso de fémur")
+                    else:
+                        r = pedir_si_no("Q16: ¿Es un hueso plano?") #(como cráneo, costilla)
+                        if r == "s":
+                            r = pedir_si_no("Q17: ¿Protege órganos internos?")
+                            if r == "s":
+                                print("Costilla")
+                            else:
+                                print("Cráneo")
+                        else:
+                            r = pedir_si_no("Q18: ¿Es pequeño e irregular?") #(como vértebra, mano, pie)
+                            if r == "s":
+                                print("Vértebra o hueso pequeño")
+                            else:
+                                print("Un hueso de mano o pie")
+                else:
+                    print("Fragmento de hueso")
+
+            
 
        
 
