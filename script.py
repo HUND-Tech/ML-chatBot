@@ -568,6 +568,17 @@ def obj_natural():#Q2
                 else:
                     print("Fragmento de hueso")
 
+def obj_artificial():#Q3
+    #HERRAMIENTAS Y UTENSILIOS
+    #MÁQUINAS Y ELECTRÓNICOS
+    #MUEBLES
+    #CONSTRUCCIONES Y ESTRUCTURAS
+    #VEHÍCULOS Y MEDIOS DE TRANSPORTE
+    #ROPA Y ACCESORIOS
+    #JUGUETES Y ARTÍCULOS DE OCIO
+    #INSTRUMENTOS MUSICALES
+    #ARTÍCULOS DEPORTIVOS
+
             
 
        
