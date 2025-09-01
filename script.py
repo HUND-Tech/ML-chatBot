@@ -39,21 +39,13 @@ def rama_seres_vivos():
     print("No se pudo ubicar con las preguntas.")
 
 def rama_lugares():
-    r = pedir_si_no("Q4: ¿Es un animal?")
+    r = pedir_si_no("Q4: ¿Es un lugar natural?")
     if r == "s":
-        #animales()
+        lugares_naturales()
         return
-    r = pedir_si_no("Q5: ¿Es una planta?")
+    r = pedir_si_no("Q5: ¿Es una construcción hecha por el ser humano?")
     if r == "s":
-        # plantas()
-        return
-    r = pedir_si_no("Q6: ¿Es un hongo?")
-    if r == "s":
-        # hongo()
-        return
-    r = pedir_si_no("Q7: ¿Es un microorganismo?")
-    if r == "s":
-        # microorganismos()
+        construcciones_humanas()
         return
     print("No se pudo ubicar con las preguntas.")
 
@@ -1261,6 +1253,269 @@ def obj_natural():#Q2
                 else:
                     print("Fragmento de hueso")
 
+def lugares_naturales(): #Q4
+    r = pedir_si_no("Q6: ¿Es principalmente acuático?")
+    if r == "s":
+        r = pedir_si_no("Q7: ¿Es de agua salada?")
+        if r == "s":
+            r2 = pedir_si_no("Q8: ¿Tiene olas y playa?")
+            if r2 == "s":
+                print("Pensaste en una playa o costa")
+            else:
+                print("Pensaste en el mar o océano")
+        else:
+            r2 = pedir_si_no("Q8: ¿El agua fluye continuamente?")
+            if r2 == "s":
+                print("Pensaste en un río")
+            else:
+                r3 = pedir_si_no("Q9: ¿Está contenido en un espacio limitado y tranquilo?")
+                if r3 == "s":
+                    print("Pensaste en un lago")
+                else:
+                    r4 = pedir_si_no("Q10: ¿El agua cae desde una altura?")
+                    if r4 == "s":
+                        print("Pensaste en una cascada")
+                    else:
+                        print("Lugar acuático poco común")
+    else:
+        r = pedir_si_no("Q7: ¿Es muy alto y rocoso?")
+        if r == "s":
+            r2 = pedir_si_no("Q8: ¿Tiene forma cónica y expulsa lava o humo?")
+            if r2 == "s":
+                print("Pensaste en un volcán")
+            else:
+                print("Pensaste en una montaña")
+        else:
+            r2 = pedir_si_no("Q8: ¿Tiene mucha vegetación?")
+            if r2 == "s":
+                print("Pensaste en un bosque o selva")
+            else:
+                r3 = pedir_si_no("Q9: ¿Es árido y arenoso?")
+                if r3 == "s":
+                    print("Pensaste en un desierto")
+                else:
+                    r4 = pedir_si_no("Q10: ¿Está bajo tierra?")
+                    if r4 == "s":
+                        print("Pensaste en una cueva")
+                    else:
+                        print("Lugar terrestre poco común")
+        return
+
+def construcciones_humanas():
+    # Edificios habitacionales
+    r = pedir_si_no("Q6: ¿Se utiliza principalmente para vivir?")
+    if r == "s":
+        r = pedir_si_no("Q7: ¿Es una construcción grande y lujosa, a menudo histórica?")
+        if r == "s":
+            r = pedir_si_no("Q8: ¿Tiene torreones, murallas o aspecto de fortaleza?")
+            if r == "s":
+                print("¡Pensaste en un castillo!")
+            else:
+                r = pedir_si_no("Q9: ¿Se trata de una residencia enorme con jardines extensos?")
+                if r == "s":
+                    print("¡Pensaste en una mansión o villa!")
+                else:
+                    print("¡Pensaste en un chalet o hacienda!")
+        else:
+            r = pedir_si_no("Q8: ¿Está compuesto por varios pisos y viviendas similares en un mismo edificio?")
+            if r == "s":
+                r = pedir_si_no("Q9: ¿Es moderno y alto, con muchos apartamentos por piso?")
+                if r == "s":
+                    print("¡Pensaste en un rascacielos o condominio!")
+                else:
+                    print("¡Pensaste en un departamento o dúplex/tríplex!")
+            else:
+                r = pedir_si_no("Q9: ¿Es una vivienda pequeña y rústica, normalmente en zonas de campo o montaña?")
+                if r == "s":
+                    r = pedir_si_no("Q10: ¿Es de madera o materiales naturales y se usa como refugio temporal?")
+                    if r == "s":
+                        print("¡Pensaste en una cabaña o refugio!")
+                    else:
+                        print("¡Pensaste en un rancho o villa rural!")
+                else:
+                    r = pedir_si_no("Q10: ¿Se utiliza temporalmente para alojamiento de viajeros o estudiantes?")
+                    if r == "s":
+                        r = pedir_si_no("Q11: ¿Es un hotel con servicios para turistas?")
+                        if r == "s":
+                            print("¡Pensaste en un hotel!")
+                        else:
+                            r3 = pedir_si_no("Q11: ¿Es una residencia para estudiantes o albergue juvenil?")
+                            if r3 == "s":
+                                print("¡Pensaste en una residencia estudiantil o albergue!")
+                            else:
+                                print("¡Pensaste en otro tipo de vivienda pequeña o alojamiento temporal!")
+    else:
+        r = pedir_si_no("Q7: ¿Se utiliza para educación, salud o cultura?")
+        if r == "s":
+            r = pedir_si_no("Q8: ¿Está relacionado con la educación?")
+            if r == "s":
+                r2 = pedir_si_no("Q9: ¿Reciben principalmente niños o adolescentes?")
+                if r2 == "s":
+                    print("¡Pensaste en una escuela o colegio!")
+                else:
+                    r3 = pedir_si_no("Q10: ¿Es un centro de educación superior con facultades y campus extensos?")
+                    if r3 == "s":
+                        print("¡Pensaste en una universidad!")
+                    else:
+                        print("¡Pensaste en otro tipo de institución educativa!")
+            else:
+                r = pedir_si_no("Q11: ¿Se relaciona con la salud?")
+                if r == "s":
+                    r2 = pedir_si_no("Q12: ¿Atiende a toda la población con diferentes servicios médicos?")
+                    if r2 == "s":
+                        print("¡Pensaste en un hospital o clínica pública!")
+                    else:
+                        print("¡Pensaste en un consultorio o clínica pequeña!")
+                else:
+                    r = pedir_si_no("Q13: ¿Se relaciona con la cultura o las artes?")
+                    if r == "s":
+                        r2 = pedir_si_no("Q14: ¿Guarda colecciones de objetos históricos o artísticos para exhibición?")
+                        if r2 == "s":
+                            print("¡Pensaste en un museo!")
+                        else:
+                            r3 = pedir_si_no("Q15: ¿Ofrece espacios para presentaciones, obras o conciertos?")
+                            if r3 == "s":
+                                r4 = pedir_si_no("Q16: ¿Se centra principalmente en teatro y espectáculos en vivo?")
+                                if r4 == "s":
+                                    print("¡Pensaste en un teatro!")
+                                else:
+                                    print("¡Pensaste en un centro cultural!")
+                            else:
+                                r5 = pedir_si_no(
+                                    "Q17: ¿Se enfoca en el préstamo y consulta de libros y material bibliográfico?")
+                                if r5 == "s":
+                                    r6 = pedir_si_no("Q18: ¿Está asociada a una universidad?")
+                                    if r6 == "s":
+                                        print("¡Pensaste en una biblioteca universitaria!")
+                                    else:
+                                        print("¡Pensaste en una biblioteca pública!")
+                                else:
+                                    print("¡Pensaste en otro edificio cultural o educativo!")
+        else:
+            r = pedir_si_no("Q8: ¿Sirve para trasladar personas o mercancías?")
+            if r == "s":
+                r = pedir_si_no("Q9: ¿Está relacionado con el transporte aéreo?")
+                if r == "s":
+                    r2 = pedir_si_no("Q10: ¿Es para aviones comerciales con pistas y terminales grandes?")
+                    if r2 == "s":
+                        print("¡Pensaste en un aeropuerto!")
+                    else:
+                        r3 = pedir_si_no("Q11: ¿Es para helicópteros o vuelos pequeños?")
+                        if r3 == "s":
+                            print("¡Pensaste en un helipuerto!")
+                        else:
+                            print("¡Pensaste en otra instalación aérea!")
+                else:
+                    r = pedir_si_no("Q12: ¿Está relacionado con transporte acuático?")
+                    if r == "s":
+                        r2 = pedir_si_no("Q13: ¿Permite embarcar y desembarcar barcos grandes, ferris o barcos de carga?")
+                        if r2 == "s":
+                            print("¡Pensaste en un puerto o muelle!")
+                        else:
+                            r3 = pedir_si_no("Q14: ¿Es para pasajeros pequeños, ferrys o transporte local?")
+                            if r3 == "s":
+                                print("¡Pensaste en una estación de ferry!")
+                            else:
+                                print("¡Pensaste en otra instalación acuática!")
+                    else:
+                        r = pedir_si_no("Q15: ¿Está relacionado con transporte terrestre?")
+                        if r == "s":
+                            r2 = pedir_si_no("Q16: ¿Es una vía de tránsito, carretera o autopista?")
+                            if r2 == "s":
+                                r3 = pedir_si_no("Q17: ¿Tiene pasos elevados, viaductos o túneles?")
+                                if r3 == "s":
+                                    r4 = pedir_si_no("Q18: ¿Es solo para peatones?")
+                                    if r4 == "s":
+                                        print("¡Pensaste en un paso peatonal elevado o subterráneo!")
+                                    else:
+                                        print("¡Pensaste en un viaducto o túnel!")
+                                else:
+                                    print("¡Pensaste en una carretera o autopista!")
+                            else:
+                                r3 = pedir_si_no(
+                                    "Q19: ¿Es un puente que conecta dos zonas separadas por agua o terreno?")
+                                if r3 == "s":
+                                    print("¡Pensaste en un puente!")
+                                else:
+                                    print("¡Pensaste en un estacionamiento/estacion/!")
+            else:
+                r = pedir_si_no("Q9: ¿Tiene valor histórico, cultural o religioso?")
+                if r == "s":
+                    r2 = pedir_si_no("Q10: ¿Es una construcción antigua reconocida por su historia o arquitectura?")
+                    if r2 == "s":
+                        r3 = pedir_si_no("Q11: ¿Está asociado con ceremonias religiosas o rituales?")
+                        if r3 == "s":
+                            print("¡Pensaste en un templo o lugar de culto!")
+                        else:
+                            r4 = pedir_si_no(
+                                "Q12: ¿Es una estructura monumental de gran tamaño, visible en la ciudad o región?")
+                            if r4 == "s":
+                                print("¡Pensaste en una pirámide, castillo o monumento histórico!")
+                            else:
+                                print("¡Pensaste en una escultura pública o monumento menor!")
+                else:
+                    # Lugares de ocio o deporte
+                    r2 = pedir_si_no("Q10: ¿Se utiliza para actividades deportivas?")
+                    if r2 == "s":
+                        r3 = pedir_si_no(
+                            "Q11: ¿Se practica principalmente un deporte colectivo en él (fútbol, baloncesto, etc.)?")
+                        if r3 == "s":
+                            print("¡Pensaste en un estadio o arena!")
+                        else:
+                            r4 = pedir_si_no(
+                                "Q12: ¿Se utiliza para deportes individuales o específicos (natación, patinaje, golf, ciclismo)?")
+                            if r4 == "s":
+                                r5 = pedir_si_no("Q13: ¿Es al aire libre y con circuitos o pistas largas?")
+                                if r5 == "s":
+                                    r6 = pedir_si_no("Q14: ¿Se usa para carreras de autos o motos?")
+                                    if r6 == "s":
+                                        print("¡Pensaste en un autódromo o circuito de carreras!")
+                                    else:
+                                        r7 = pedir_si_no("Q15: ¿Es para ciclismo o carreras de bicicletas?")
+                                        if r7 == "s":
+                                            print("¡Pensaste en un velódromo!")
+                                        else:
+                                            r8 = pedir_si_no("Q16: ¿Es un campo con césped y hoyos?")
+                                            if r8 == "s":
+                                                print("¡Pensaste en un campo de golf!")
+                                            else:
+                                                print("¡Pensaste en otra instalación deportiva individual!")
+                                else:
+                                    r5 = pedir_si_no("Q17: ¿Es un gimnasio, polideportivo o pista cubierta?")
+                                    if r5 == "s":
+                                        print("¡Pensaste en un gimnasio o polideportivo!")
+                                    else:
+                                        r6 = pedir_si_no("Q18: ¿Es una piscina pública o acuaparque?")
+                                        if r6 == "s":
+                                            print("¡Pensaste en una piscina pública o acuaparque!")
+                                        else:
+                                            r7 = pedir_si_no("Q19: ¿Es una pista de patinaje o skatepark?")
+                                            if r7 == "s":
+                                                print("¡Pensaste en pista de patinaje o skatepark!")
+                                            else:
+                                                print("¡Pensaste en otra instalación deportiva!")
+                    else:
+                        r3 = pedir_si_no("Q11: ¿Se utiliza para entretenimiento o recreación?")
+                        if r3 == "s":
+                            r4 = pedir_si_no("Q12: ¿Es al aire libre y con atracciones mecánicas o temáticas?")
+                            if r4 == "s":
+                                print("¡Pensaste en parque de diversiones o parque temático!")
+                            else:
+                                r5 = pedir_si_no("Q13: ¿Sirve para espectáculos, cine o teatro?")
+                                if r5 == "s":
+                                    r6 = pedir_si_no("Q14: ¿Es al aire libre?")
+                                    if r6 == "s":
+                                        print("¡Pensaste en teatro al aire libre o anfiteatro!")
+                                    else:
+                                        print("¡Pensaste en cine o teatro cerrado!")
+                                else:
+                                    r6 = pedir_si_no(
+                                        "Q15: ¿Es un centro de entretenimiento, zoológico, acuario o jardín botánico?")
+                                    if r6 == "s":
+                                        print("¡Pensaste en zoológico, acuario, jardín botánico o centro de ocio!")
+                                    else:
+                                        print("¡Pensaste en otra instalación recreativa o de entretenimiento!")
+        return
 
 
 
@@ -1296,15 +1551,12 @@ def main():
     if r == "s":
         # Agotar rama Seres vivos
         rama_seres_vivos()
-        # Entraste en: Seres vivos -> (aquí agotar preguntas de esa categoría).
         return
 
     # Q3
-    r = pedir_si_no("Q3: ¿Es un lugar o una construcción (por ejemplo: ciudad, montaña, edificio, río)?")
+    r = pedir_si_no("Q3: ¿Es un lugar o una construcción (por ejemplo: ciudad, montaña, edificio, río, etc)?")
     if r == "s":
-        # Agotar rama Lugares/Construcciones
         rama_lugares()
-        # Entraste en: Lugar/Construcción -> (aquí agotar preguntas de esa categoría).
         return
 
     # Q4
