@@ -293,6 +293,7 @@ def identificar_mamifero():  #salvajes mamiferos
 def animales(): #Q3
     r = pedir_si_no("Q4: ¿Es doméstico (vive normalmente con humanos)?")
     if r == "s":
+
         r = pedir_si_no("Q5: ¿Es un mamífero?")
         if r == "s":
             r = pedir_si_no("Q6: ¿Es pequeño (menos de 1 m de longitud, ej.raton)?")
@@ -1008,7 +1009,7 @@ def main():
     # Q1
     r = pedir_si_no("Q1: ¿Es algo abstracto o intangible (idea, emoción, número, concepto)?")
     if r == "s":
-        # Agotar rama Abstracto/Intangibleds
+        # Agotar rama Abstracto/Intangible
         rama_abstracto()
         # Entraste en: Abstracto/Intangible -> (aquí agotar preguntas de esa categoría).
         return
