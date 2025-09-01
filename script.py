@@ -432,7 +432,11 @@ def animales(): #Q3
                                 if r == "s":
                                     print("Identificado: Pavo real")
                                 else:
-                                    print("Identificado: Guacamaya o Loro")
+                                    r=pedir_si_no("¿Puede volar hacia atras?")
+                                    if r == "s":
+                                        print("Pensaste en un colibri")
+                                    else:
+                                        print("Pensaste en un Guacamaya o Loro")
                         else:
                             print("Identificado: Cuervo")
             return
@@ -494,7 +498,7 @@ def animales(): #Q3
                                     if r == "s":
                                         print("Pensaste en Iguana")
                                     else:
-                                        r9 = pedir_si_no("Q14: ¿Es visto normalmente en cas y puede regenerar pastes d esu cuerpo?")
+                                        r9 = pedir_si_no("Q14: ¿Es visto normalmente en casa y puede regenerar partes de su cuerpo?")
                                         if r9 == "s":
                                             print("Identificado: Lagartija")
                                         else:
@@ -562,15 +566,18 @@ def animales(): #Q3
                     else:
                         print("Pensaste en Delfín")
             else:
-                r3 = pedir_si_no("Q3: ¿Es un pez óseo (con aletas y escamas) o un invertebrado?")
+                r3 = pedir_si_no("Q3: ¿Es un pez cartilaginoso (tiburón, raya)?")
                 if r3 == "s":
-                    # Peces óseos
+                    # Peces cartilaginosos
                     r4 = pedir_si_no("Q4: ¿Es grande, con dientes afilados y detecta sangre a distancia?")
                     if r4 == "s":
                         print("Pensaste en Tiburón blanco")
                     else:
-                        r5 = pedir_si_no(
-                            "Q5: ¿Es agresivo en cardumen y famoso por morder humanos en películas de ríos tropicales?")
+                        print("Pensaste en otro pez cartilaginoso")
+                else:
+                    r3 = pedir_si_no("Q3: ¿Es un pez óseo (con aletas y escamas) o un invertebrado?")
+                    if r3 == "s":
+                        r5 = pedir_si_no("Q5: ¿Es agresivo en cardumen y famoso por morder humanos en películas de ríos tropicales?")
                         if r5 == "s":
                             print("Pensaste en Piraña")
                         else:
@@ -584,31 +591,31 @@ def animales(): #Q3
                                     print("Pensaste en Trucha")
                                 else:
                                     print("Pensaste en otro pez óseo")
-                else:
-                    # Invertebrados acuáticos
-                    r4 = pedir_si_no("Q4: ¿Tiene tentáculos y cuerpo blando sin columna?")
-                    if r4 == "s":
-                        r5 = pedir_si_no("Q5: ¿Es enorme y vive en profundidades, protagonista de mitos marinos?")
-                        if r5 == "s":
-                            print("Pensaste en Calamar gigante")
-                        else:
-                            r6 = pedir_si_no("Q6: ¿Es pequeño y con branquias visibles, famoso en acuarios?")
-                            if r6 == "s":
-                                print("Pensaste en Pulpo")
-                            else:
-                                print("Pensaste en otro cefalópodo")
                     else:
-                        # Equinodermos
-                        r5 = pedir_si_no("Q5: ¿Tiene forma de estrella?")
-                        if r5 == "s":
-                            print("Pensaste en Estrella de mar")
+                        # Invertebrados acuáticos
+                        r4 = pedir_si_no("Q4: ¿Tiene tentáculos y cuerpo blando sin columna?")
+                        if r4 == "s":
+                            r5 = pedir_si_no("Q5: ¿Es enorme y vive en profundidades, protagonista de mitos marinos?")
+                            if r5 == "s":
+                                print("Pensaste en Calamar gigante")
+                            else:
+                                r6 = pedir_si_no("Q6: ¿Es pequeño y con branquias visibles, famoso en acuarios?")
+                                if r6 == "s":
+                                    print("Pensaste en Pulpo")
+                                else:
+                                    print("Pensaste en otro cefalópodo")
                         else:
-                            r6 = pedir_si_no("Q6: ¿Es redondo y con pinchos?")
-                            if r6 == "s":
-                                print("Pensaste en Erizo de mar")
-                        r7 = pedir_si_no("Q7: ¿Es una medusa, flotante y con tentáculos finos?")
-                        if r7 == "s":
-                            print("Pensaste en Medusa")
+                            # Equinodermos
+                            r5 = pedir_si_no("Q5: ¿Tiene forma de estrella?")
+                            if r5 == "s":
+                                print("Pensaste en Estrella de mar")
+                            else:
+                                r6 = pedir_si_no("Q6: ¿Es redondo y con pinchos?")
+                                if r6 == "s":
+                                    print("Pensaste en Erizo de mar")
+                            r7 = pedir_si_no("Q7: ¿Es una medusa, flotante y con tentáculos finos?")
+                            if r7 == "s":
+                                print("Pensaste en Medusa")
             return
 
         #  Invertebrados salvajes
@@ -686,7 +693,7 @@ def animales(): #Q3
 def frutas():
     r = pedir_si_no("Q5: ¿Es cítrica?")
     if r == "s":
-        r = pedir_si_no("Q6: ¿Tiene un color anaranjado?")
+        r = pedir_si_no("Q6: ¿Tiene un color anaranjado y pulpa anaranjada?")
         if r == "s":
             r = pedir_si_no("Q7: ¿Es más pequeña y fácil de pelar?")
             if r == "s":
@@ -702,7 +709,7 @@ def frutas():
                 else:
                     print("¡Pensaste en una lima!")
             else:
-                r = pedir_si_no("Q10: ¿Es de color morado/rosado por dentro y más grande?")
+                r = pedir_si_no("Q10: ¿El color de su pulpa es morado/rosado por dentro y más grande que una naranja?")
                 if r == "s":
                     print("¡Pensaste en una toronja!")
                 else:
