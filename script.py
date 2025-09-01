@@ -289,7 +289,6 @@ def identificar_mamifero():  #salvajes mamiferos
                     else:
                         print("Mamífero omnívoro poco común")
 
-
 def animales(): #Q3
     r = pedir_si_no("Q4: ¿Es doméstico (vive normalmente con humanos)?")
     if r == "s":
@@ -692,7 +691,7 @@ def animales(): #Q3
         print("No pude identificar el animal salvaje.")
 
 def frutas():
-    r = pedir_si_no("Q5: ¿Es cítrica?")
+    r = pedir_si_no("Q7: ¿Es cítrica?")
     if r == "s":
         r = pedir_si_no("Q6: ¿Tiene un color anaranjado y pulpa anaranjada?")
         if r == "s":
@@ -721,15 +720,15 @@ def frutas():
                         print("Podría ser otra fruta cítrica menos común.")
     else:
         # No es cítrica
-        r = pedir_si_no("Q6: ¿Es una fruta de color rojo?")
+        r = pedir_si_no("Q8: ¿Es una fruta de color rojo?")
         if r == "s":
-            r = pedir_si_no("Q7: ¿Es conocida como la fruta prohibida en cuentos o muy común en mercados?")
+            r = pedir_si_no("Q9: ¿Es conocida como la fruta prohibida en cuentos o muy común en mercados?")
             if r == "s":
                 print("¡Pensaste en una manzana roja!")
             else:
-                r = pedir_si_no("Q8: ¿Es pequeña y tiene semillas visibles por fuera?")
+                r = pedir_si_no("Q10: ¿Es pequeña y tiene semillas visibles por fuera?")
                 if r == "s":
-                    r = pedir_si_no("Q9: ¿Se usa mucho en postres como pasteles o helados?")
+                    r = pedir_si_no("Q11: ¿Se usa mucho en postres como pasteles o helados?")
                     if r == "s":
                         print("¡Pensaste en una fresa!")
                     else:
@@ -757,13 +756,13 @@ def frutas():
                                     print("¡Pensaste en un arándano!")
         else:
             # No es roja
-            r = pedir_si_no("Q12: ¿Es una fruta grande?")
+            r = pedir_si_no("Q9: ¿Es una fruta grande?")
             if r == "s":
-                r = pedir_si_no("Q13: ¿Es verde por fuera y roja por dentro con semillas negras?")
+                r = pedir_si_no("Q10: ¿Es verde por fuera y roja por dentro con semillas negras?")
                 if r == "s":
                     print("¡Pensaste en una sandía!")
                 else:
-                    r = pedir_si_no("Q14: ¿Es amarilla por dentro y con cáscara dura, con una corona en la parte superior?")
+                    r = pedir_si_no("Q11: ¿Es amarilla por dentro y con cáscara dura, con una corona en la parte superior?")
                     if r == "s":
                         print("¡Pensaste en una piña!")
                     else:
@@ -782,7 +781,7 @@ def frutas():
                                     print("No se logró adivinar la fruta, revisa las características.")
             else:
                 # No es grande
-                r = pedir_si_no("Q16: ¿Es alargada y de color amarillo?")
+                r = pedir_si_no("Q10: ¿Es alargada y de color amarillo?")
                 if r == "s":
                     print("¡Pensaste en un plátano!")
                 else:
@@ -898,9 +897,9 @@ def cereales():
         return
 
 def plantas():
-    r = pedir_si_no("Q4: ¿Es comestible?")
+    r = pedir_si_no("Q5: ¿Es comestible?")
     if r == "s":
-        r=pedir_si_no("Q5: ¿Es una fruta?")
+        r=pedir_si_no("Q6: ¿Es una fruta?")
         if r == "s":
             frutas()
         else:
@@ -914,7 +913,7 @@ def plantas():
                     print("")
                     cereales()
                 else:
-                    r=pedir_si_no("Q9: ¿Es una hierba comestible (condimento/especia)?")
+                    r=pedir_si_no("Q8: ¿Es una hierba comestible (condimento/especia)?")
                     if r == "s":
                         print("")
                     else:
@@ -930,7 +929,6 @@ def plantas():
                 print("pensaste en ")
             else:
                 print("pensaste en un tipo de planta muy poco comun")
-
 
 def hongos():
     r = pedir_si_no("Q1: ¿Es comestible sin riesgos para la salud?")
