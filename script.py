@@ -287,7 +287,7 @@ def animales(): #Q3
 
         r = pedir_si_no("Q5: ¿Es un mamífero?")
         if r == "s":
-            r = pedir_si_no("Q6: ¿Es pequeño (menos de 1 m de longitud, ej.raton)?")
+            r = pedir_si_no("Q6: ¿Es pequeño (menos de 50cm de longitud, ej.raton)?")
             if r == "s":
                 r = pedir_si_no("Q7: ¿Hace chillidos agudos?")
                 if r == "s":
@@ -416,15 +416,15 @@ def animales(): #Q3
                     else:
                         r = pedir_si_no("Q10: ¿Es un ave muy colorida o exótica?")
                         if r == "s":
-                            r = pedir_si_no("Q10a: ¿Tiene pico muy grande y colorido?")
+                            r = pedir_si_no("Q11: ¿Tiene pico muy grande y colorido?")
                             if r == "s":
                                 print("Identificado: Tucán")
                             else:
-                                r = pedir_si_no("Q10b: ¿Tiene cola muy vistosa en forma de abanico?")
+                                r = pedir_si_no("Q12: ¿Tiene cola muy vistosa en forma de abanico?")
                                 if r == "s":
                                     print("Identificado: Pavo real")
                                 else:
-                                    r=pedir_si_no("¿Puede volar hacia atras?")
+                                    r=pedir_si_no("Q13: ¿Puede volar hacia atras?")
                                     if r == "s":
                                         print("Pensaste en un colibri")
                                     else:
@@ -693,7 +693,7 @@ def frutas():
             else:
                 print("¡Pensaste en una naranja!")
         else:
-            r = pedir_si_no("Q8: ¿Es de color amarillo o verde fuerte?")
+            r = pedir_si_no("Q8: ¿Es de color amarillo o verde fuerte por fuera?")
             if r == "s":
                 r = pedir_si_no("Q9: ¿Es muy ácido y pequeño y con color verde?")
                 if r == "s":
@@ -707,9 +707,9 @@ def frutas():
                 else:
                     r = pedir_si_no("Q11: ¿Tiene muchas semillas pequeñas y un sabor muy intenso?")
                     if r == "s":
-                        print("¡Pensaste en un maracuyá!")
+                        print("¡Pensaste en un maracuyá/kiwi!")
                     else:
-                        print("Podría ser otra fruta cítrica menos común.")
+                        print("Podría ser otra fruta cítrica menos común como kiwi.")
     else:
         # No es cítrica
         r = pedir_si_no("Q8: ¿Es una fruta de color rojo?")
@@ -1568,8 +1568,7 @@ def main():
         return
 
     # Q5
-    r = pedir_si_no(
-        "Q5: ¿Es un fenómeno natural, un cuerpo celeste o una forma de energía (por ejemplo: lluvia, sol, luz, terremoto)?")
+    r = pedir_si_no("Q5: ¿Es un fenómeno natural, un cuerpo celeste o una forma de energía (por ejemplo: lluvia, sol, luz, terremoto)?")
     if r == "s":
         # Agotar rama Fenómenos / Cuerpos celestes / Energía
         rama_fenomeno()
