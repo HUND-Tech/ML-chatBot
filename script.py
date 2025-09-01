@@ -84,6 +84,7 @@ def rama_fenomeno():
                 print("METEOROLÓGICOS · VIENTO: brisa, ventisca, huracán, tornado, tifón, ciclón")
                 return
             r = pedir_si_no("Q5: ¿Está relacionado con FENÓMENOS ELÉCTRICOS?")
+
             if r == "s":
                 print("METEOROLÓGICOS · ELÉCTRICOS: rayo, relámpago, trueno, tormenta eléctrica")
                 return
@@ -336,21 +337,21 @@ def rama_fenomeno():
     print("FENÓMENO/ENERGÍA NO CLASIFICADO")
 
 def rama_objeto():
-    r = pedir_si_no("Q7: ¿Es un animal?")
+    r = pedir_si_no("Q7: ¿Es un objeto natural?")
     if r == "s":
-        #animales()
+        obj_natural()
         return
-    r = pedir_si_no("Q8: ¿Es una planta?")
+    r = pedir_si_no("Q8: ¿Es un objeto crado con intervención humana?")
     if r == "s":
-        # plantas()
+        obj_artificial()
         return
-    r = pedir_si_no("Q9: ¿Es un hongo?")
+    r = pedir_si_no("Q9: ¿Es un producto de consumo?")
     if r == "s":
-        # hongo()
+        # pructo_consumo()
         return
-    r = pedir_si_no("Q10: ¿Es un microorganismo?")
+    r = pedir_si_no("Q10: ¿Es un residuo o desecho?")
     if r == "s":
-        # microorganismos()
+        # residuo()
         return
     print("No se pudo ubicar con las preguntas.")
 
@@ -579,13 +580,13 @@ def animales(): #Q3
                     print("Ave doméstica poco comun.")
             return
 
-        r = pedir_si_no("¿Vive principalmente en agua?")
+        r = pedir_si_no("Q7: ¿Vive principalmente en agua?")
         if r == "s":
-            r = pedir_si_no("¿Es pequeño y ornamental?")
+            r = pedir_si_no("Q8: ¿Es pequeño y ornamental?")
             if r == "s":
                 print("Pez ornamental doméstico (goldfish, guppy, betta).")
             else:
-                print("Pez doméstico o acuático poco comun.")
+                print("Pez doméstico.")
             return
 
         r = pedir_si_no("¿Es un reptil sin caparazón")
@@ -994,9 +995,11 @@ def frutas():
                                     print("¡Pensaste en una mora!")
                                 else:
                                     print("¡Pensaste en un arándano!")
+                            else:
+                                print("Pensaste en un fruta roja poco conocida")
         else:
             # No es roja
-            r = pedir_si_no("Q9: ¿Es una fruta grande?")
+            r = pedir_si_no("Q9: ¿Es una fruta grande?")  #corregir linea
             if r == "s":
                 r = pedir_si_no("Q10: ¿Es verde por fuera y roja por dentro con semillas negras?")
                 if r == "s":
@@ -1162,11 +1165,11 @@ def plantas():
     else:
         r=pedir_si_no("Q5: ¿Es ornamental (flores o de jardín)?")
         if r == "s":
-            print("Pensaste en flores o arboles decorativos")
+            print("Pensaste en una flore o arboles decorativos")
         else:
             r=pedir_si_no("Q6: ¿Se usa con fines medicinales o industriales?")
             if r == "s":
-                print("pensaste en ")
+                print("pensaste en Manzanilla/Sabila ")
             else:
                 print("pensaste en un tipo de planta muy poco comun")
 
@@ -1816,6 +1819,7 @@ def obj_artificial():#Q3
                     print("Armario")
                 else:
                     print("Estante")
+        return
     
    # HERRAMIENTAS Y UTENSILIOS
     else:
@@ -2235,7 +2239,7 @@ def main():
         return
 
     # Q2
-    r = pedir_si_no("Q2: ¿Es un ser vivo?")
+    r = pedir_si_no("Q2: ¿Es un ser vivo, fruta o verdura?")
     if r == "s":
         # Agotar rama Seres vivos
         rama_seres_vivos()
@@ -2272,7 +2276,7 @@ def main():
         return
 
     # Si todas las raíces son 'n'
-    print("No se pudo ubicar con las preguntas raíz.")
+    print("Pensaste en nada")
 
 
 if __name__ == "__main__":
