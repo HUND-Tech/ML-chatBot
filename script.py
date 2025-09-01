@@ -984,6 +984,285 @@ def microorganismos():
     else:
         print("No se pudo identificar el microorganismo.")
 
+def obj_natural():#Q2
+    
+   #MINERALES
+    r = pedir_si_no("Q3: ¿Es un mineral?")
+    if r == "s":
+        
+        #minerales metálicos
+        r = pedir_si_no("Q4: ¿Es metálico?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿Es un considerado un metal precioso?")
+            if r == "s":
+                
+                # metales preciosos
+                r = pedir_si_no("Q6: ¿Es amarillo y muy blando?")
+                if r == "s":
+                    print("Oro")
+                else:
+                    r = pedir_si_no("Q7: ¿Es plateado y brillante?")
+                    if r == "s":
+                        print("Plata")
+                    else:
+                        print("Platino")
+            else:
+                
+                # metales comunes                
+                r = pedir_si_no("Q8: ¿Tiene color rojo naranjoso?")
+                if r == "s":
+                    print("Cobre")
+                else:
+                    r = pedir_si_no("Q9: ¿Es magnético?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Es común en herramientas?")
+                        if r == "s":
+                            print("Hierro")
+                        else:
+                            print("Níquel")
+                    else:
+                        r = pedir_si_no("Q11: ¿Es MUY ligero?")
+                        if r == "s":
+                            print("Aluminio")
+                        else:
+                            r = pedir_si_no("Q12: ¿Es blando y tóxico?")
+                            if r == "s":
+                                print("Plomo")
+                            else:
+                                r = pedir_si_no("Q13: ¿Es frágil pero resistente a la corrosión?")
+                                if r == "s":
+                                    print("Zinc")
+                                else:
+                                    r = pedir_si_no("Q14: ¿Es comúnmente usado en soldaduras?")
+                                    if r == "s":
+                                        print("Estaño")
+                                    else:
+                                        r = pedir_si_no("Q15: ¿Es líquido a temperatura ambiente?")
+                                        if r == "s":
+                                            print("Mercurio")
+                                        else:
+                                            print("Otro mineral metálico")
+        else:
+            
+            # minerales no metálicos
+            r = pedir_si_no("Q16: ¿Es MUY duro?")
+            if r == "s":
+                
+                # piedras preciosas y cuarzo
+                r = pedir_si_no("Q17: ¿Puede rayar a los demás minerales)?")
+                if r == "s":
+                    print("Diamante")
+                else:
+                    r = pedir_si_no("Q18: ¿Es rojo intenso?")
+                    if r == "s":
+                        print("Rubí")
+                    else:
+                        r = pedir_si_no("Q19: ¿Es azul profundo?")
+                        if r == "s":
+                            print("Zafiro")
+                        else:
+                            r = pedir_si_no("Q20: ¿Es verde intenso?")
+                            if r == "s":
+                                print("Esmeralda")
+                            else:
+                                print("Otra gema dura (cuarzo, amatista, topacio, turmalina, granate, etc.)")
+            else:
+                
+                # minerales blandos o intermedios
+                r = pedir_si_no("Q17: ¿Se puede rayar con la uña?")
+                if r == "s":
+                    r = pedir_si_no("Q18: ¿Es translúcido y muy blando?")
+                    if r == "s":
+                        print("Yeso")
+                    else:
+                        r = pedir_si_no("Q19: ¿Tiene sabor salado?")
+                        if r == "s":
+                            print("Halita (sal de mesa)")
+                        else:
+                            print("Otro mineral muy blando (talco, etc.)")
+                else:
+                    r = pedir_si_no("Q20: ¿Reacciona con efervescencia)?")
+                    if r == "s":
+                        print("Calcita (u otro carbonato)")
+                    else:
+                        print("Otro mineral no metálico (fluorita, apatito, feldespatos, etc.)")
+
+
+    #ROCAS
+    elif pedir_si_no("Q4: ¿Es una roca ?") == "s":
+        
+         # tipos principales
+        r = pedir_si_no("Q5: ¿Es ígnea ?") #(formada por magma o lava)
+        if r == "s":
+            
+            # igneas
+            r = pedir_si_no("Q6: ¿Se formó en la superficie?")
+            if r == "s":
+                
+                # extrusivas
+                r = pedir_si_no("Q7: ¿Es negra y de grano fino?")
+                if r == "s":
+                    print("Basalto")
+                else:
+                    r = pedir_si_no("Q8: ¿Tiene bordes filosos?")
+                    if r == "s":
+                        print("Obsidiana")
+                    else:
+                        print("Andesita o riolita")
+            else:
+                
+                # intrusivas
+                r = pedir_si_no("Q6: ¿Es blanca rosada y de grano grueso?")
+                if r == "s":
+                    print("Granito")
+                else:
+                    print("Gabro o diorita")
+
+        else:
+            r = pedir_si_no("Q5: ¿Es sedimentaria") #(formada por acumulación de sedimentos)
+            if r == "s":
+                
+                # sedimentarias
+                r = pedir_si_no("Q6: ¿Se raya con la uña fácilmente?")
+                if r == "s":
+                    print("Yeso o caliza blanda")
+                else:
+                    r = pedir_si_no("Q7: ¿Reacciona con efervescencia?")
+                    if r == "s":
+                        print("Caliza o dolomita")
+                    else:
+                        r = pedir_si_no("Q8: ¿Está formada por granos de arena visibles?")
+                        if r == "s":
+                            print("Arenisca")
+                        else:
+                            r = pedir_si_no("Q9: ¿Contiene fragmentos grandes y redondeados?")
+                            if r == "s":
+                                print("Conglomerado")
+                            else:
+                                print("Lutita o arcilla")
+
+            else:
+                # metamórficas
+                r = pedir_si_no("Q6: ¿Presenta capas o foliación visible?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Es de grano muy fino y se rompe en láminas delgadas?")
+                    if r == "s":
+                        print("Pizarra")
+                    else:
+                        r = pedir_si_no("Q8: ¿Tiene bandas claras y oscuras alternadas?")
+                        if r == "s":
+                            print("Gneis")
+                        else:
+                            print("Esquisto")
+                else:
+                    r = pedir_si_no("Q7: ¿Es dura, masiva y puede tener aspecto cristalino?")
+                    if r == "s":
+                        r = pedir_si_no("Q8: ¿Se raya con cuchillo)?")
+                        if r == "s":
+                            print("Mármol")
+                        else:
+                            print("Cuarcita")
+                    else:
+                        print("Otra roca metamórfica menos común")
+                        
+    #RESTOS ORGÁNICOS NO VIVOS                    
+    r = pedir_si_no("Q4: ¿Proviene de un ser vivo?")
+    if r == "s":
+        
+        # de acuerdo a su oirgen
+        r = pedir_si_no("Q5: Su origen es vegetal?")
+        if r == "s":
+            
+            # origen Vegetal
+            r = pedir_si_no("Q6: ¿Está fosilizado?") # (petrificado, mineralizado)
+            if r == "s":
+                r = pedir_si_no("Q7: ¿Es un tronco?")
+                if r == "s":
+                    print("Tronco petrificado")
+                else:
+                    r = pedir_si_no("Q8: ¿Es una hoja impresa en roca?")
+                    if r == "s":
+                        print("Hoja fósil")
+                    else:
+                        r = pedir_si_no("Q9: ¿Es resina fosilizada?")
+                        if r == "s":
+                            print("Ámbar")
+                        else:
+                            print("Otro fósil vegetal")
+            else:
+                
+                # No fosilizado
+                r = pedir_si_no("Q7: ¿Es leñoso?") #(tronco, rama)
+                if r == "s":
+                    r = pedir_si_no("Q8: ¿Presenta anillos de crecimiento visibles?")
+                    if r == "s":
+                        print("Madera")
+                    else:
+                        print("Fragmento de tronco o rama")
+                else:                 
+                        r = pedir_si_no("Q8: ¿Está carbonizado?")
+                        if r == "s":
+                            print("Carbón vegetal")
+                        else:
+                            print("Otro resto vegetal")
+
+        else:
+            
+            # de orugen Animal fosilizado
+            r = pedir_si_no("Q12: ¿Está fosilizado?")
+            if r == "s":
+                r = pedir_si_no("Q13: ¿Es un hueso?")
+                if r == "s":
+                    r = pedir_si_no("Q14: ¿Es un hueso grande?") #(ej. fémur, mandíbula)
+                    if r == "s":
+                        print("Hueso fósil grande")
+                    else:
+                        print("Hueso fósil pequeño")
+                else:
+                    r = pedir_si_no("Q15: ¿Es una concha?")
+                    if r == "s":
+                        r = pedir_si_no("Q16: ¿Es bivalva?")
+                        if r == "s":
+                            print("Concha fósil bivalva")
+                        else:
+                            print("Caracol fósil (concha univalva)")
+                    else:
+                        r = pedir_si_no("Q17: ¿Es un diente fosilizado?")
+                        if r == "s":
+                            print("Diente fósil")
+                        else:
+                            print("Otro fósil animal")
+            else:
+                
+                # de origen animal no fosilizado
+                r = pedir_si_no("Q13: ¿Es un fragmento completo?")
+                if r == "s":
+                    r = pedir_si_no("Q14: ¿Es un hueso largo?") #(como fémur, húmero)
+                    if r == "s":
+                        r = pedir_si_no("Q15: ¿Es parte de una extremidad superior?")
+                        if r == "s":
+                            print("Un hueso de húmero")
+                        else:
+                            print("Un hueso de fémur")
+                    else:
+                        r = pedir_si_no("Q16: ¿Es un hueso plano?") #(como cráneo, costilla)
+                        if r == "s":
+                            r = pedir_si_no("Q17: ¿Protege órganos internos?")
+                            if r == "s":
+                                print("Costilla")
+                            else:
+                                print("Cráneo")
+                        else:
+                            r = pedir_si_no("Q18: ¿Es pequeño e irregular?") #(como vértebra, mano, pie)
+                            if r == "s":
+                                print("Vértebra o hueso pequeño")
+                            else:
+                                print("Un hueso de mano o pie")
+                else:
+                    print("Fragmento de hueso")
+
+
+
 
 
 
