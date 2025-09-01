@@ -69,23 +69,271 @@ def rama_persona():
     print("No se pudo ubicar con las preguntas.")
 
 def rama_fenomeno():
-    r = pedir_si_no("Q6: ¿Es un animal?")
+    
+    r = pedir_si_no("Q3: ¿Es un FENÓMENO NATURAL observable?")
     if r == "s":
-        #animales()
+        r = pedir_si_no("Q4: ¿Es METEOROLÓGICO/ATMOSFÉRICO?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con la PRECIPITACIÓN?")
+            if r == "s":
+                print("METEOROLÓGICOS · PRECIPITACIÓN: lluvia, nieve, granizo, aguanieve, rocío")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con el VIENTO?")
+            if r == "s":
+                print("METEOROLÓGICOS · VIENTO: brisa, ventisca, huracán, tornado, tifón, ciclón")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con FENÓMENOS ELÉCTRICOS?")
+            if r == "s":
+                print("METEOROLÓGICOS · ELÉCTRICOS: rayo, relámpago, trueno, tormenta eléctrica")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con TEMPERATURA?")
+            if r == "s":
+                print("METEOROLÓGICOS · TÉRMICOS: calor, frío, ola de calor, helada, punto de rocío")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con EFECTOS ÓPTICOS?")
+            if r == "s":
+                print("METEOROLÓGICOS · ÓPTICOS: arcoíris, halo, espejismo, parhelio, corona solar")
+                return
+            print("METEOROLÓGICOS · PRESIÓN: alta presión, baja presión, frente climático")
+            return
+        
+        r = pedir_si_no("Q4: ¿Es GEOLÓGICO/TERRESTRE?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con SISMOS o movimiento terrestre?")
+            if r == "s":
+                print("GEOLÓGICOS · SÍSMICOS: terremoto, temblor, tsunami, maremoto")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con VOLCANES?")
+            if r == "s":
+                print("GEOLÓGICOS · VOLCÁNICOS: erupción, lava, ceniza, fumarola, magma")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con EROSIÓN/DERRUMBES?")
+            if r == "s":
+                print("GEOLÓGICOS · EROSIÓN: deslizamiento, avalancha, derrumbe, alud")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con FORMACIÓN del relieve?")
+            if r == "s":
+                print("GEOLÓGICOS · FORMACIÓN: montañas, valles, cañones, placas tectónicas")
+                return
+            print("GEOLÓGICOS · SUBSUELO: magma, mineralización, géiser, termal")
+            return
+        
+        r = pedir_si_no("Q4: ¿Es HIDROLÓGICO/ACUÁTICO?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con MAREAS?")
+            if r == "s":
+                print("HIDROLÓGICOS · MAREAS: marea alta, marea baja, maremoto")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con CORRIENTES?")
+            if r == "s":
+                print("HIDROLÓGICOS · CORRIENTES: corriente marina, corriente fluvial, remolino")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con OLAS/MAR?")
+            if r == "s":
+                print("HIDROLÓGICOS · OLAS: olas, tsunami, marejada, resaca")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con el CICLO DEL AGUA?")
+            if r == "s":
+                print("HIDROLÓGICOS · CICLO DEL AGUA: evaporación, condensación, precipitación, escorrentía")
+                return
+            print("HIDROLÓGICOS · ESTADOS/EVENTOS: congelación, deshielo, inundación, sequía")
+            return
+        
+        r = pedir_si_no("Q4: ¿Es ASTRONÓMICO/ESPACIAL?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Se refiere al ESPACIO/medio?")
+            if r == "s":
+                print("ASTRONÓMICOS · ESPACIO: vacío cósmico, medio interestelar, gravedad cero")
+                return
+            r = pedir_si_no("Q5: ¿Se refiere a CUERPOS/EVENTOS orbitales?")
+            if r == "s":
+                print("ASTRONÓMICOS · CUERPOS: eclipse, conjunción, oposición, tránsito")
+                return
+            r = pedir_si_no("Q5: ¿Es un EVENTO astrofísico?")
+            if r == "s":
+                print("ASTRONÓMICOS · EVENTOS: supernova, agujero negro, nebulosa, galaxia")
+                return
+            r = pedir_si_no("Q5: ¿Es un FENÓMENO LUMINOSO?")
+            if r == "s":
+                print("ASTRONÓMICOS · LUMINOSOS: aurora boreal, luz zodiacal, lluvia de estrellas")
+                return
+            print("ASTRONÓMICOS · ORBITALES: rotación, traslación, perihelio, afelio")
+            return
+        
+        r = pedir_si_no("Q4: ¿Es BIOLÓGICO/ECOLÓGICO?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con CICLOS biológicos?")
+            if r == "s":
+                print("BIOLÓGICOS · CICLOS: fotosíntesis, respiración, descomposición")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con COMPORTAMIENTOS?")
+            if r == "s":
+                print("BIOLÓGICOS · COMPORTAMIENTO: migración, hibernación, estivación, eclosión")
+                return
+            r = pedir_si_no("Q5: ¿Es un FENÓMENO ECOLÓGICO?")
+            if r == "s":
+                print("BIOLÓGICOS · ECOLÓGICOS: sucesión, simbiosis, depredación, competencia")
+                return
+            print("BIOLÓGICOS · BIOLUMINISCENCIA: luz natural en seres vivos")
+            return
+        
+        print("FENÓMENO NATURAL NO ESPECIFICADO")
         return
-    r = pedir_si_no("Q7: ¿Es una planta?")
+    
+   
+    r = pedir_si_no("Q3: ¿Es una FORMA DE ENERGÍA?")
     if r == "s":
-        # plantas()
+        r = pedir_si_no("Q4: ¿Es TÉRMICA?")
+        if r == "s":
+            print("ENERGÍA · TÉRMICA: calor, temperatura, conducción, convección, radiación")
+            return
+        r = pedir_si_no("Q4: ¿Es ELÉCTRICA?")
+        if r == "s":
+            print("ENERGÍA · ELÉCTRICA: electricidad, corriente, voltaje, resistencia, circuito")
+            return
+        r = pedir_si_no("Q4: ¿Es MAGNÉTICA?")
+        if r == "s":
+            print("ENERGÍA · MAGNÉTICA: magnetismo, campo magnético, electromagnetismo")
+            return
+        r = pedir_si_no("Q4: ¿Es LUMINOSA/RADIANTE?")
+        if r == "s":
+            print("ENERGÍA · LUMINOSA/RADIANTE: luz, fotones, espectro electromagnético, radiación")
+            return
+        r = pedir_si_no("Q4: ¿Es SONORA?")
+        if r == "s":
+            print("ENERGÍA · SONORA: sonido, onda sonora, eco, resonancia, ultrasonido")
+            return
+        r = pedir_si_no("Q4: ¿Es MECÁNICA?")
+        if r == "s":
+            print("ENERGÍA · MECÁNICA: movimiento, fuerza, trabajo, potencia, cinética, potencial")
+            return
+        r = pedir_si_no("Q4: ¿Es QUÍMICA?")
+        if r == "s":
+            print("ENERGÍA · QUÍMICA: reacción química, combustión, oxidación, fermentación")
+            return
+        r = pedir_si_no("Q4: ¿Es NUCLEAR?")
+        if r == "s":
+            print("ENERGÍA · NUCLEAR: fisión, fusión, radiactividad, desintegración")
+            return
+        print("ENERGÍA · CONCEPTOS COSMOLÓGICOS: energía oscura, materia oscura")
         return
-    r = pedir_si_no("Q8: ¿Es un hongo?")
+    
+    # TERCER NIVEL: FENÓMENOS FÍSICOS FUNDAMENTALES
+    r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO fundamental?")
     if r == "s":
-        # hongo()
+        r = pedir_si_no("Q4: ¿Está relacionado con la ESTRUCTURA ATÓMICA?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿Con ÁTOMOS?")
+            if r == "s":
+                print("FÍSICOS · ÁTOMOS: protones, neutrones, electrones")
+                return
+            r = pedir_si_no("Q5: ¿Con PARTÍCULAS subatómicas?")
+            if r == "s":
+                print("FÍSICOS · PARTÍCULAS: quark, leptón, bosón, hadrón")
+                return
+            r = pedir_si_no("Q5: ¿Con ESTADOS exóticos?")
+            if r == "s":
+                print("FÍSICOS · ESTADOS: plasma, condensado Bose-Einstein")
+                return
+            print("FÍSICOS · INTERACCIONES: fuerza nuclear fuerte/débil")
+            return
+        
+        r = pedir_si_no("Q4: ¿Está relacionado con los ESTADOS DE LA MATERIA?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿SÓLIDO?")
+            if r == "s":
+                print("FÍSICOS · SÓLIDO: cristalino, amorfo, polímero")
+                return
+            r = pedir_si_no("Q5: ¿LÍQUIDO?")
+            if r == "s":
+                print("FÍSICOS · LÍQUIDO: viscoso, fluido, superfluido")
+                return
+            r = pedir_si_no("Q5: ¿GASEOSO?")
+            if r == "s":
+                print("FÍSICOS · GASEOSO: comprimido, ideal, real")
+                return
+            print("FÍSICOS · PLASMA: ionizado, conductor")
+            return
+        
+        r = pedir_si_no("Q4: ¿Está relacionado con las FUERZAS FUNDAMENTALES?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿GRAVEDAD?")
+            if r == "s":
+                print("FÍSICOS · GRAVEDAD: atracción, curvatura del espaciotiempo")
+                return
+            r = pedir_si_no("Q5: ¿ELECTROMAGNETISMO?")
+            if r == "s":
+                print("FÍSICOS · ELECTROMAGNETISMO: campo EM, luz, electricidad, magnetismo")
+                return
+            r = pedir_si_no("Q5: ¿NUCLEAR FUERTE?")
+            if r == "s":
+                print("FÍSICOS · NUCLEAR FUERTE: núcleos atómicos, hadrones")
+                return
+            print("FÍSICOS · NUCLEAR DÉBIL: desintegración radiactiva")
+            return
+        
+        r = pedir_si_no("Q4: ¿Está relacionado con FENÓMENOS CUÁNTICOS?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿Dualidad ONDA-PARTÍCULA?")
+            if r == "s":
+                print("CUÁNTICOS · DUALIDAD: onda-partícula")
+                return
+            r = pedir_si_no("Q5: ¿Principios (incertidumbre/exclusión)?")
+            if r == "s":
+                print("CUÁNTICOS · PRINCIPIOS: incertidumbre, exclusión")
+                return
+            r = pedir_si_no("Q5: ¿ENTRELAZAMIENTO?")
+            if r == "s":
+                print("CUÁNTICOS · ENTRELAZAMIENTO: no-localidad")
+                return
+            print("CUÁNTICOS · TÚNELES: efecto túnel cuántico")
+            return
+        
+        print("FENÓMENO FÍSICO FUNDAMENTAL NO ESPECIFICADO")
         return
-    r = pedir_si_no("Q9: ¿Es un microorganismo?")
+    
+    # CUARTO NIVEL: FENÓMENOS QUÍMICOS
+    r = pedir_si_no("Q3: ¿Es un FENÓMENO QUÍMICO?")
     if r == "s":
-        # microorganismos()
+        r = pedir_si_no("Q4: ¿Es una REACCIÓN?")
+        if r == "s":
+            print("QUÍMICOS · REACCIONES: síntesis, descomposición, sustitución, combustión")
+            return
+        r = pedir_si_no("Q4: ¿Es un EQUILIBRIO/INTERACCIÓN?")
+        if r == "s":
+            print("QUÍMICOS · EQUILIBRIOS: químico, ácido-base, redox, solubilidad")
+            return
+        r = pedir_si_no("Q4: ¿Tiene que ver con ESTADOS dispersos?")
+        if r == "s":
+            print("QUÍMICOS · ESTADOS: coloide, suspensión, emulsión, solución")
+            return
+        print("QUÍMICOS · PROPIEDADES: pH, conductividad, reactividad, catálisis")
         return
-    print("No se pudo ubicar con las preguntas.")
+    
+    # QUINTO NIVEL: FENÓMENOS HUMANOS/SOCIALES (opcional)
+    r = pedir_si_no("Q3: ¿Es un FENÓMENO SOCIAL o HUMANO?")
+    if r == "s":
+        r = pedir_si_no("Q4: ¿Se refiere a GLOBALIZACIÓN?")
+        if r == "s":
+            print("SOCIALES · GLOBALIZACIÓN: económica, cultural, tecnológica")
+            return
+        r = pedir_si_no("Q4: ¿Se refiere a MIGRACIÓN?")
+        if r == "s":
+            print("SOCIALES · MIGRACIÓN: humana, animal, patrones")
+            return
+        r = pedir_si_no("Q4: ¿Se refiere a TENDENCIAS?")
+        if r == "s":
+            print("SOCIALES · TENDENCIAS: moda, pensamiento, comportamiento colectivo")
+            return
+        print("SOCIALES · REVOLUCIONES: industrial, tecnológica, social")
+        return
+    
+    print("FENÓMENO/ENERGÍA NO CLASIFICADO")
 
 def rama_objeto():
     r = pedir_si_no("Q7: ¿Es un animal?")
@@ -1253,6 +1501,445 @@ def obj_natural():#Q2
                 else:
                     print("Fragmento de hueso")
 
+def obj_artificial():#Q3
+    
+    # MÁQUINAS Y ELECTRÓNICOS
+    r = pedir_si_no("Q4: ¿Requiere electricidad para funcionar?")
+    if r == "s":
+        
+        # comunicación 
+        r = pedir_si_no("Q5: ¿Tiene pantalla?")
+        if r == "s":
+            
+            # dispositivos con pantalla
+            r = pedir_si_no("Q6: ¿Es portátil?") #que se pueda llevar fácilemente
+            if r == "s":
+                r = pedir_si_no("Q7: ¿Tiene pantalla táctil?")
+                if r == "s":
+                    print("Smartphone")
+                else:
+                    print("Computadora portátil")
+            else:
+                r = pedir_si_no("Q8: ¿Se usa principalmente para entretenimiento?")
+                if r == "s":
+                    print("Televisión")
+                else:
+                    print("PC de escritorio")
+        else:
+            
+            #electrodoméstico
+            # sin pantalla
+            r = pedir_si_no("Q6: ¿Se usa en la cocina?")
+            if r == "s":
+                r = pedir_si_no("Q7: ¿Mantiene cosas frías?")
+                if r == "s":
+                    r = pedir_si_no("Q8: ¿Mantiene cosas congeladas?")
+                    if r == "s":
+                        print("Congelador")
+                    else:
+                        print("Refrigerador")
+                else:
+                    r = pedir_si_no("Q8: ¿Calienta comida rápidamente?")
+                    if r == "s":
+                        print("Microondas")
+                    else:
+                        r = pedir_si_no("Q9: ¿Lava ropa?")
+                        if r == "s":
+                            print("Lavadora")
+                        else:
+                            print("Otro electrodoméstico")
+            else:
+                r = pedir_si_no("Q7: ¿Reproduce música?")
+                if r == "s":
+                    print("Radio")
+                else:
+                    r = pedir_si_no("Q8: ¿Limpia el suelo?")
+                    if r == "s":
+                        print("Aspiradora")
+                    else:
+                        print("Otro aparato eléctrico")
+    
+    # ROPA Y ACCESORIOS
+    elif pedir_si_no("Q5: ¿Se lleva puesto en el cuerpo?") == "s":
+        
+        r = pedir_si_no("Q6: ¿Se lleva en los pies?")
+        if r == "s":
+            
+            # calzado
+            r = pedir_si_no("Q7: ¿Es utilizado comúnmente como calzado formal?")
+            if r == "s":
+                print("Zapatos")
+            else:
+                r = pedir_si_no("Q8: ¿Es utilizado principalmente para deporte o ejercicio?")
+                if r == "s":
+                    print("Tenis")
+                else:
+                    r = pedir_si_no("Q9: ¿Al usarlo se ven los dedos de los pies?")
+                    if r == "s":
+                        print("Sandalias")
+                    else:
+                        print("Botas")
+        else:
+            r = pedir_si_no("Q7: ¿Cubre el torso o las piernas?")
+            if r == "s":
+                
+                # vestimenta
+                r = pedir_si_no("Q8: ¿Es ropa interior?")
+                if r == "s":
+                    r = pedir_si_no("Q9: ¿Es para la parte superior del cuerpo?")
+                    if r == "s":
+                        print("Sostén/Camiseta interior")
+                    else:
+                        print("Calzones/Boxers")
+                else:
+                    r = pedir_si_no("Q9: ¿Es para nadar o la playa?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Es de una sola pieza?")
+                        if r == "s":
+                            print("Traje de baño")
+                        else:
+                            print("Un bikini")
+                    else:
+                        r = pedir_si_no("Q10: ¿Se puede colocar encima de otra ropa?")
+                        if r == "s":
+                            r = pedir_si_no("Q11: ¿Tiene mangas?")
+                            if r == "s":
+                                r = pedir_si_no("Q12: ¿Es muy largo y amplio?")
+                                if r == "s":
+                                    print("Abrigo")
+                                else:
+                                    print("Chamarra")
+                            else:
+                                print("Chaleco")
+                        else:
+                            r = pedir_si_no("Q11: ¿Cubre las piernas?")
+                            if r == "s":
+                                r = pedir_si_no("Q12: ¿Cubre hasta los tobillos?")
+                                if r == "s":
+                                    print("Pantalón")
+                                else:
+                                    print("Short")
+                            else:
+                                r = pedir_si_no("Q12: ¿Tiene mangas?")
+                                if r == "s":
+                                    r = pedir_si_no("Q13: ¿Es formal?")
+                                    if r == "s":
+                                        print("Camisa")
+                                    else:
+                                        r = pedir_si_no("Q14: ¿Es típicamente femenina?")
+                                        if r == "s":
+                                            print("Blusa")
+                                        else:
+                                            print("Playera")
+                                else:
+                                    print("Vestido")
+            else:
+                
+               # accesorios
+                r = pedir_si_no("Q8: ¿Se lleva en la cabeza?")
+                if r == "s":
+                    r = pedir_si_no("Q9: ¿Protege del sol o lluvia?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Tiene visera")
+                        if r == "s":
+                            print("Gorra/Sombrero")
+                        else:
+                            print("Capucha")
+                    else:
+                        r = pedir_si_no("Q10: ¿Ayuda a ver mejor?")
+                        if r == "s":
+                            r = pedir_si_no("Q11: ¿Protege del sol?")
+                            if r == "s":
+                                print("Gafas de sol")
+                            else:
+                                print("Lentes")
+                        else:
+                            r = pedir_si_no("Q11: ¿Es decorativo o para el cabello?")
+                            if r == "s":
+                                print("Diadema/Banda")
+                            else:
+                                print("Casco")
+                else:
+                    r = pedir_si_no("Q9: ¿Se lleva en las orejas?")
+                    if r == "s":
+                        print("Aretes/Pendientes")
+                    else:
+                        r = pedir_si_no("Q10: ¿Se lleva en el cuello?")
+                        if r == "s":
+                            r = pedir_si_no("Q11: ¿Es para abrigarse?")
+                            if r == "s":
+                                print("Bufanda")
+                            else:
+                                r = pedir_si_no("Q12: ¿Es de metal o joyería?")
+                                if r == "s":
+                                    print("Collar")
+                                else:
+                                    print("Corbata")
+                        else:
+                            r = pedir_si_no("Q11: ¿Se lleva en las manos o muñecas?")
+                            if r == "s":
+                                r = pedir_si_no("Q12: ¿Muestra la hora?")
+                                if r == "s":
+                                    print("Reloj")
+                                else:
+                                    r = pedir_si_no("Q13: ¿Es joyería decorativa?")
+                                    if r == "s":
+                                        print("Pulsera/Anillo")
+                                    else:
+                                        print("Guantes")
+                            else:
+                                r = pedir_si_no("Q12: ¿Se lleva en la cintura?")
+                                if r == "s":
+                                    print("Cinturón")
+                                else:
+                                    print("Otro accesorio")
+    
+    # VEHÍCULOS Y MEDIOS DE TRANSPORTE
+    elif pedir_si_no("Q6: ¿Se usa para transportarse?") == "s":
+        
+        r = pedir_si_no("Q7: ¿Se mueve por tierra?")
+        if r == "s":
+            
+            # terrestres
+            r = pedir_si_no("Q8: ¿Tiene motor?")
+            if r == "s":
+                r = pedir_si_no("Q9: ¿Tiene cuatro ruedas?")
+                if r == "s":
+                    r = pedir_si_no("Q10: ¿Es para muchas personas?")
+                    if r == "s":
+                        r = pedir_si_no("Q11: ¿Es para más de 20 personas)?")
+                        if r == "s":
+                            print("Autobús")
+                        else:
+                            print("Camioneta/Van")
+                    else:
+                        r = pedir_si_no("Q11: ¿Es para carga?")
+                        if r == "s":
+                            print("Camión")
+                        else:
+                            print("Automóvil")
+                else:
+                    r = pedir_si_no("Q10: ¿Tiene ruedas?")
+                    if r == "s":
+                        print("Motocicleta")
+                    else:
+                        print("Tren")
+            else:
+                r = pedir_si_no("Q9: ¿Tiene ruedas?")
+                if r == "s":
+                    r = pedir_si_no("Q10: ¿Tiene pedales?")
+                    if r == "s":
+                        print("Bicicleta")
+                    else:
+                        print("Patineta/Scooter")
+                else:
+                    print("Patines")
+        else:
+            r = pedir_si_no("Q8: ¿Se mueve por el aire?")
+            if r == "s":
+                
+                # aéreos
+                r = pedir_si_no("Q9: ¿Tiene motor?")
+                if r == "s":
+                    r = pedir_si_no("Q10: ¿Es para MUCHAS personas?")
+                    if r == "s":
+                        print("Avión")
+                    else:
+                        r = pedir_si_no("Q11: ¿Tiene hélices?")
+                        if r == "s":
+                            print("Helicóptero")
+                        else:
+                            print("Avioneta")
+                else:
+                    r = pedir_si_no("Q10: ¿Usa aire caliente?")
+                    if r == "s":
+                        print("Globo aerostático")
+                    else:
+                        print("Planeador")
+            else:
+                
+                # acuáticos
+                r = pedir_si_no("Q9: ¿Tiene motor?")
+                if r == "s":
+                    r = pedir_si_no("Q10: ¿Tiene capacidad como para 10 personas o más?")
+                    if r == "s":
+                        r = pedir_si_no("Q11: ¿Es de dimensiones MUY grandes?")
+                        if r == "s":
+                            print("Barco/Ferry")
+                        else:
+                            print("Yate")
+                    else:
+                        print("Lancha")
+                else:
+                    r = pedir_si_no("Q10: ¿Usa remos?")
+                    if r == "s":
+                        r = pedir_si_no("Q11: ¿Es para una persona?")
+                        if r == "s":
+                            print("Kayak")
+                        else:
+                            print("Canoa/Bote")
+                    else:
+                        print("Velero")
+    # MUEBLES
+    elif pedir_si_no("Q4: ¿Es un mueble?") == "s":
+        
+        r = pedir_si_no("Q5: ¿Se usa principalmente para sentarse?")
+        if r == "s":
+            
+            # asientos
+            r = pedir_si_no("Q6: ¿Es para una sola persona?")
+            if r == "s":
+                r = pedir_si_no("Q7: ¿Tiene respaldo?")
+                if r == "s":
+                    r = pedir_si_no("Q8: ¿Tiene brazos?")
+                    if r == "s":
+                        print("Sillón")
+                    else:
+                        print("Silla")
+                else:
+                    print("Taburete")
+            else:
+                print("Sofá")
+        else:
+            
+            # almacenamiento
+            r = pedir_si_no("Q6: ¿Tiene superficie plana para trabajar?")
+            if r == "s":
+                r = pedir_si_no("Q7: ¿Tiene cajones?")
+                if r == "s":
+                    print("Escritorio")
+                else:
+                    print("Mesa")
+            else:
+                r = pedir_si_no("Q8: ¿Tiene puertas?")
+                if r == "s":
+                    print("Armario")
+                else:
+                    print("Estante")
+    
+   # HERRAMIENTAS Y UTENSILIOS
+    else:
+     r = pedir_si_no("Q5: ¿Se usa para escribir o dibujar?")
+    if r == "s":
+        # escritura y dibujo
+        r = pedir_si_no("Q6: ¿Usa tinta?")
+        if r == "s":
+            r = pedir_si_no("Q7: ¿Viene en varios colores?")
+            if r == "s":
+                r = pedir_si_no("Q8: ¿Tiene punta gruesa?")
+                if r == "s":
+                    print("Marcador")
+                else:
+                    print("Plumón")
+            else:
+                print("Pluma")
+        else:
+            r = pedir_si_no("Q7: ¿Usa grafito?")
+            if r == "s":
+                r = pedir_si_no("Q8: ¿Es de madera?")
+                if r == "s":
+                    print("Lápiz")
+                else:
+                    print("Lapicero")
+            else:
+                r = pedir_si_no("Q8: ¿Se usa para borrar?")
+                if r == "s":
+                    print("Goma de borrar")
+                
+    else:
+        r = pedir_si_no("Q6: ¿Se usa en la cocina?")
+        if r == "s":
+            
+            # utensilios de cocina
+            r = pedir_si_no("Q7: ¿Se usa para cortar?")
+            if r == "s":
+                r = pedir_si_no("Q8: ¿Es MUY afilado?")
+                if r == "s":
+                    print("Cuchillo")
+                else:
+                    print("Tijeras de cocina")
+            else:
+                r = pedir_si_no("Q8: ¿Se usa para comer?")
+                if r == "s":
+                    r = pedir_si_no("Q9: ¿Tiene dientes/púas?")
+                    if r == "s":
+                        print("Tenedor")
+                    else:
+                        r = pedir_si_no("Q10: ¿Es cóncavo?")
+                        if r == "s":
+                            print("Cuchara")
+                        else:
+                            print("Cuchillo de mesa")
+                else:
+                    r = pedir_si_no("Q9: ¿Se usa para cocinar/preparar?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Tiene mango largo?")
+                        if r == "s":
+                            print("Espátula/Cuchara de cocina")
+                        else:
+                            print("Abrelatas/Pelador")
+                    else:
+                        print("Plato/Tazón")
+        else:
+            r = pedir_si_no("Q7: ¿Se usa para reparar o construir?")
+            if r == "s":
+                
+                # herramientas de trabajo
+                r = pedir_si_no("Q8: ¿Se usa para golpear?")
+                if r == "s":
+                    r = pedir_si_no("Q9: ¿Tiene cabeza de metal?")
+                    if r == "s":
+                        print("Martillo")
+                    else:
+                        print("Mazo")
+                else:
+                    r = pedir_si_no("Q9: ¿Se usa para apretar o aflojar?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Tiene forma de cruz?")
+                        if r == "s":
+                            print("Destornillador")
+                        else:
+                            print("Llave inglesa")
+                    else:
+                        r = pedir_si_no("Q10: ¿Se usa para cortar?")
+                        if r == "s":
+                            r = pedir_si_no("Q11: ¿Tiene dientes?")
+                            if r == "s":
+                                print("Sierra")
+                            else:
+                                print("Tijeras")
+                        else:
+                            print("Pinzas")
+            else:
+                r = pedir_si_no("Q8: ¿Se usa para limpiar?")
+                if r == "s":
+                    
+                    # herramientas de limpieza
+                    r = pedir_si_no("Q9: ¿Tiene cerdas o fibras?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Tiene mango largo?")
+                        if r == "s":
+                            print("Escoba")
+                        else:
+                            print("Cepillo de limpieza")
+                    else:
+                        r = pedir_si_no("Q10: ¿Absorbe líquidos?")
+                        if r == "s":
+                            print("Esponja/Trapo")
+                        else:
+                            print("Recogedor")
+                else:
+                    r = pedir_si_no("Q9: ¿Se usa para medir?")
+                    if r == "s":
+                        r = pedir_si_no("Q10: ¿Mide longitud?")
+                        if r == "s":
+                            print("Regla/Metro")
+                        else:
+                            print("Balanza/Báscula")
+                    else:
+                        print("Otro utensilio")
+
+
 def lugares_naturales(): #Q4
     r = pedir_si_no("Q6: ¿Es principalmente acuático?")
     if r == "s":
@@ -1516,6 +2203,7 @@ def construcciones_humanas():
                                     else:
                                         print("¡Pensaste en otra instalación recreativa o de entretenimiento!")
         return
+
 
 
 
