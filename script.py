@@ -39,21 +39,13 @@ def rama_seres_vivos():
     print("No se pudo ubicar con las preguntas.")
 
 def rama_lugares():
-    r = pedir_si_no("Q4: ¿Es un animal?")
+    r = pedir_si_no("Q4: ¿Es un lugar natural?")
     if r == "s":
-        #animales()
+        lugares_naturales()
         return
-    r = pedir_si_no("Q5: ¿Es una planta?")
+    r = pedir_si_no("Q5: ¿Es una construcción hecha por el ser humano?")
     if r == "s":
-        # plantas()
-        return
-    r = pedir_si_no("Q6: ¿Es un hongo?")
-    if r == "s":
-        # hongo()
-        return
-    r = pedir_si_no("Q7: ¿Es un microorganismo?")
-    if r == "s":
-        # microorganismos()
+        construcciones_humanas()
         return
     print("No se pudo ubicar con las preguntas.")
 
@@ -288,7 +280,6 @@ def identificar_mamifero():  #salvajes mamiferos
                             print("Pensaste en Oso pardo")
                     else:
                         print("Mamífero omnívoro poco común")
-
 
 def animales(): #Q3
     r = pedir_si_no("Q4: ¿Es doméstico (vive normalmente con humanos)?")
@@ -692,7 +683,7 @@ def animales(): #Q3
         print("No pude identificar el animal salvaje.")
 
 def frutas():
-    r = pedir_si_no("Q5: ¿Es cítrica?")
+    r = pedir_si_no("Q7: ¿Es cítrica?")
     if r == "s":
         r = pedir_si_no("Q6: ¿Tiene un color anaranjado y pulpa anaranjada?")
         if r == "s":
@@ -721,15 +712,15 @@ def frutas():
                         print("Podría ser otra fruta cítrica menos común.")
     else:
         # No es cítrica
-        r = pedir_si_no("Q6: ¿Es una fruta de color rojo?")
+        r = pedir_si_no("Q8: ¿Es una fruta de color rojo?")
         if r == "s":
-            r = pedir_si_no("Q7: ¿Es conocida como la fruta prohibida en cuentos o muy común en mercados?")
+            r = pedir_si_no("Q9: ¿Es conocida como la fruta prohibida en cuentos o muy común en mercados?")
             if r == "s":
                 print("¡Pensaste en una manzana roja!")
             else:
-                r = pedir_si_no("Q8: ¿Es pequeña y tiene semillas visibles por fuera?")
+                r = pedir_si_no("Q10: ¿Es pequeña y tiene semillas visibles por fuera?")
                 if r == "s":
-                    r = pedir_si_no("Q9: ¿Se usa mucho en postres como pasteles o helados?")
+                    r = pedir_si_no("Q11: ¿Se usa mucho en postres como pasteles o helados?")
                     if r == "s":
                         print("¡Pensaste en una fresa!")
                     else:
@@ -757,13 +748,13 @@ def frutas():
                                     print("¡Pensaste en un arándano!")
         else:
             # No es roja
-            r = pedir_si_no("Q12: ¿Es una fruta grande?")
+            r = pedir_si_no("Q9: ¿Es una fruta grande?")
             if r == "s":
-                r = pedir_si_no("Q13: ¿Es verde por fuera y roja por dentro con semillas negras?")
+                r = pedir_si_no("Q10: ¿Es verde por fuera y roja por dentro con semillas negras?")
                 if r == "s":
                     print("¡Pensaste en una sandía!")
                 else:
-                    r = pedir_si_no("Q14: ¿Es amarilla por dentro y con cáscara dura, con una corona en la parte superior?")
+                    r = pedir_si_no("Q11: ¿Es amarilla por dentro y con cáscara dura, con una corona en la parte superior?")
                     if r == "s":
                         print("¡Pensaste en una piña!")
                     else:
@@ -782,7 +773,7 @@ def frutas():
                                     print("No se logró adivinar la fruta, revisa las características.")
             else:
                 # No es grande
-                r = pedir_si_no("Q16: ¿Es alargada y de color amarillo?")
+                r = pedir_si_no("Q10: ¿Es alargada y de color amarillo?")
                 if r == "s":
                     print("¡Pensaste en un plátano!")
                 else:
@@ -898,9 +889,9 @@ def cereales():
         return
 
 def plantas():
-    r = pedir_si_no("Q4: ¿Es comestible?")
+    r = pedir_si_no("Q5: ¿Es comestible?")
     if r == "s":
-        r=pedir_si_no("Q5: ¿Es una fruta?")
+        r=pedir_si_no("Q6: ¿Es una fruta?")
         if r == "s":
             frutas()
         else:
@@ -914,7 +905,7 @@ def plantas():
                     print("")
                     cereales()
                 else:
-                    r=pedir_si_no("Q9: ¿Es una hierba comestible (condimento/especia)?")
+                    r=pedir_si_no("Q8: ¿Es una hierba comestible (condimento/especia)?")
                     if r == "s":
                         print("")
                     else:
@@ -930,7 +921,6 @@ def plantas():
                 print("pensaste en ")
             else:
                 print("pensaste en un tipo de planta muy poco comun")
-
 
 def hongos():
     r = pedir_si_no("Q1: ¿Es comestible sin riesgos para la salud?")
@@ -1526,251 +1516,6 @@ def construcciones_humanas():
                                     else:
                                         print("¡Pensaste en otra instalación recreativa o de entretenimiento!")
         return
-def obj_artificial():#Q3
-
-    # MÁQUINAS Y ELECTRÓNICOS
-    r = pedir_si_no("Q4: ¿Requiere electricidad para funcionar?")
-    if r == "s":
-
-        # comunicación
-        r = pedir_si_no("Q5: ¿Tiene pantalla?")
-        if r == "s":
-
-            # dispositivos con pantalla
-            r = pedir_si_no("Q6: ¿Es portátil?") #que se pueda llevar fácilemente
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Tiene pantalla táctil?")
-                if r == "s":
-                    print("Smartphone")
-                else:
-                    print("Computadora portátil")
-            else:
-                r = pedir_si_no("Q8: ¿Se usa principalmente para entretenimiento?")
-                if r == "s":
-                    print("Televisión")
-                else:
-                    print("PC de escritorio")
-        else:
-
-            #electrodoméstico
-            # sin pantalla
-            r = pedir_si_no("Q6: ¿Se usa en la cocina?")
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Mantiene cosas frías?")
-                if r == "s":
-                    r = pedir_si_no("Q8: ¿Mantiene cosas congeladas?")
-                    if r == "s":
-                        print("Congelador")
-                    else:
-                        print("Refrigerador")
-                else:
-                    r = pedir_si_no("Q8: ¿Calienta comida rápidamente?")
-                    if r == "s":
-                        print("Microondas")
-                    else:
-                        r = pedir_si_no("Q9: ¿Lava ropa?")
-                        if r == "s":
-                            print("Lavadora")
-                        else:
-                            print("Otro electrodoméstico")
-            else:
-                r = pedir_si_no("Q7: ¿Reproduce música?")
-                if r == "s":
-                    print("Radio")
-                else:
-                    r = pedir_si_no("Q8: ¿Limpia el suelo?")
-                    if r == "s":
-                        print("Aspiradora")
-                    else:
-                        print("Otro aparato eléctrico")
-
-    # ROPA Y ACCESORIOS
-    elif pedir_si_no("Q4: ¿Se lleva puesto en el cuerpo?") == "s":
-
-        r = pedir_si_no("Q5: ¿Se lleva en los pies?")
-        if r == "s":
-
-            # calzado
-            r = pedir_si_no("Q6: ¿Es utilizado comúnmente como calzado formal?")
-            if r == "s":
-                print("Zapatos")
-            else:
-                r = pedir_si_no("Q7: ¿Es utilizado principalmente para deporte o ejercicio?")
-                if r == "s":
-                    print("Tenis")
-                else:
-                    r = pedir_si_no("Q8: ¿Al usarlo se ven los dedos de los pies?")
-                    if r == "s":
-                        print("Sandalias")
-                    else:
-                        print("Botas")
-        else:
-            r = pedir_si_no("Q6: ¿Cubre el torso o las piernas?")
-            if r == "s":
-
-                # vestimenta
-                r = pedir_si_no("Q7: ¿Tiene mangas?")
-                if r == "s":
-                    print("Camisa")
-                else:
-                    r = pedir_si_no("Q8: ¿Cubre las piernas?")
-                    if r == "s":
-                        print("Pantalón")
-                    else:
-                        print("Vestido")
-            else:
-
-                # accesorios
-                r = pedir_si_no("Q7: ¿Se lleva en la muñeca?")
-                if r == "s":
-                    print("Reloj")
-                else:
-                    r = pedir_si_no("Q8: ¿Se lleva en el cuello?")
-                    if r == "s":
-                        print("Collar")
-                    else:
-                        r = pedir_si_no("Q9: ¿Ayuda a ver mejor?")
-                        if r == "s":
-                            print("Gafas")
-                        else:
-                            print("Otro accesorio")
-
-    # VEHÍCULOS Y MEDIOS DE TRANSPORTE
-    elif pedir_si_no("Q4: ¿Se usa para transportarse?") == "s":
-
-        r = pedir_si_no("Q5: ¿Se mueve por tierra?")
-        if r == "s":
-
-            # terrestres
-            r = pedir_si_no("Q6: ¿Tiene motor?")
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Tiene cuatro ruedas?")
-                if r == "s":
-                    r = pedir_si_no("Q8: ¿Es para muchas personas?")
-                    if r == "s":
-                        print("Autobús")
-                    else:
-                        print("Automóvil")
-                else:
-                    print("Motocicleta")
-            else:
-                print("Bicicleta")
-        else:
-
-            # acuáticos
-            r = pedir_si_no("Q6: ¿Tiene motor?")
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Es grande?")
-                if r == "s":
-                    print("Barco")
-                else:
-                    print("Lancha")
-            else:
-                print("Canoa")
-
-    # MUEBLES
-    elif pedir_si_no("Q4: ¿Es un mueble (permanece fijo en un lugar)?") == "s":
-
-        r = pedir_si_no("Q5: ¿Se usa principalmente para sentarse?")
-        if r == "s":
-
-            # asientos
-            r = pedir_si_no("Q6: ¿Es para una sola persona?")
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Tiene respaldo?")
-                if r == "s":
-                    r = pedir_si_no("Q8: ¿Tiene brazos?")
-                    if r == "s":
-                        print("Sillón")
-                    else:
-                        print("Silla")
-                else:
-                    print("Taburete")
-            else:
-                print("Sofá")
-        else:
-
-            # almacenamiento
-            r = pedir_si_no("Q6: ¿Tiene superficie plana para trabajar?")
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Tiene cajones?")
-                if r == "s":
-                    print("Escritorio")
-                else:
-                    print("Mesa")
-            else:
-                r = pedir_si_no("Q8: ¿Tiene puertas?")
-                if r == "s":
-                    print("Armario")
-                else:
-                    print("Estante")
-
-    # HERRAMIENTAS Y UTENSILIOS
-    else:
-
-        r = pedir_si_no("Q5: ¿Se usa para escribir o dibujar?")
-        if r == "s":
-
-            # escritura
-            r = pedir_si_no("Q6: ¿Está hecho principalmente de madera?")
-            if r == "s":
-                r = pedir_si_no("Q7: ¿Usa grafito para escribir?")
-                if r == "s":
-                    print("Lápiz")
-                else:
-                    print("Regla de madera")
-            else:
-                r = pedir_si_no("Q8: ¿Usa tinta?")
-                if r == "s":
-                    r = pedir_si_no("Q9: ¿Viene en varios colores?")
-                    if r == "s":
-                        print("Marcador")
-                    else:
-                        print("Bolígrafo")
-                else:
-                    r = pedir_si_no("Q10: ¿Se usa solo para borrar?")
-                    if r == "s":
-                        print("Goma de borrar")
-                    else:
-                        print("Regla")
-        else:
-            r = pedir_si_no("Q6: ¿Se usa en la cocina?")
-            if r == "s":
-
-                # cocina
-                r = pedir_si_no("Q7: ¿Tiene filo o es cortante?")
-                if r == "s":
-                    print("Cuchillo")
-                else:
-                    r = pedir_si_no("Q8: ¿Se usa para comer?")
-                    if r == "s":
-                        r = pedir_si_no("Q9: ¿Tiene dientes o puntas?")
-                        if r == "s":
-                            print("Tenedor")
-                        else:
-                            print("Cuchara")
-                    else:
-                        r = pedir_si_no("Q10: ¿Tiene mango largo?")
-                        if r == "s":
-                            print("Sartén")
-                        else:
-                            print("Olla")
-            else:
-
-                # construcción/herramientas
-                r = pedir_si_no("Q7: ¿Se usa para golpear?")
-                if r == "s":
-                    print("Martillo")
-                else:
-                    r = pedir_si_no("Q8: ¿Se usa para cortar?")
-                    if r == "s":
-                        print("Tijeras")
-                    else:
-                        r = pedir_si_no("Q9: ¿Se usa con tornillos?")
-                        if r == "s":
-                            print("Destornillador")
-                        else:
-                            print("Otra herramienta")
 
 
 
@@ -1806,15 +1551,12 @@ def main():
     if r == "s":
         # Agotar rama Seres vivos
         rama_seres_vivos()
-        # Entraste en: Seres vivos -> (aquí agotar preguntas de esa categoría).
         return
 
     # Q3
-    r = pedir_si_no("Q3: ¿Es un lugar o una construcción (por ejemplo: ciudad, montaña, edificio, río)?")
+    r = pedir_si_no("Q3: ¿Es un lugar o una construcción (por ejemplo: ciudad, montaña, edificio, río, etc)?")
     if r == "s":
-        # Agotar rama Lugares/Construcciones
         rama_lugares()
-        # Entraste en: Lugar/Construcción -> (aquí agotar preguntas de esa categoría).
         return
 
     # Q4
