@@ -1346,31 +1346,115 @@ def obj_artificial():#Q3
             if r == "s":
                 
                 # vestimenta
-                r = pedir_si_no("Q7: ¿Tiene mangas?")
+                r = pedir_si_no("Q7: ¿Es ropa interior?")
                 if r == "s":
-                    print("Camisa")
-                else:
-                    r = pedir_si_no("Q8: ¿Cubre las piernas?")
+                    r = pedir_si_no("Q8: ¿Es para la parte superior del cuerpo?")
                     if r == "s":
-                        print("Pantalón")
+                        print("Sostén/Camiseta interior")
                     else:
-                        print("Vestido")
+                        print("Calzones/Boxers")
+                else:
+                    r = pedir_si_no("Q8: ¿Es para nadar o la playa?")
+                    if r == "s":
+                        r = pedir_si_no("Q9: ¿Es de una sola pieza?")
+                        if r == "s":
+                            print("Traje de baño")
+                        else:
+                            print("Un bikini")
+                    else:
+                        r = pedir_si_no("Q9: ¿Se puede colocar encima de otra ropa?")
+                        if r == "s":
+                            r = pedir_si_no("Q10: ¿Tiene mangas?")
+                            if r == "s":
+                                r = pedir_si_no("Q11: ¿Es muy largo y amplio?")
+                                if r == "s":
+                                    print("Abrigo")
+                                else:
+                                    print("Chamarra")
+                            else:
+                                print("Chaleco")
+                        else:
+                            r = pedir_si_no("Q10: ¿Cubre las piernas?")
+                            if r == "s":
+                                r = pedir_si_no("Q11: ¿Cubre hasta los tobillos?")
+                                if r == "s":
+                                    print("Pantalón")
+                                else:
+                                    print("Short")
+                            else:
+                                r = pedir_si_no("Q11: ¿Tiene mangas?")
+                                if r == "s":
+                                    r = pedir_si_no("Q12: ¿Es formal?")
+                                    if r == "s":
+                                        print("Camisa")
+                                    else:
+                                        r = pedir_si_no("Q13: ¿Es típicamente femenina?")
+                                        if r == "s":
+                                            print("Blusa")
+                                        else:
+                                            print("Playera")
+                                else:
+                                    print("Vestido")
             else:
                 
-                # accesorios
-                r = pedir_si_no("Q7: ¿Se lleva en la muñeca?")
+               # accesorios
+                r = pedir_si_no("Q7: ¿Se lleva en la cabeza?")
                 if r == "s":
-                    print("Reloj")
-                else:
-                    r = pedir_si_no("Q8: ¿Se lleva en el cuello?")
+                    r = pedir_si_no("Q8: ¿Protege del sol o lluvia?")
                     if r == "s":
-                        print("Collar")
+                        r = pedir_si_no("Q9: ¿Tiene visera")
+                        if r == "s":
+                            print("Gorra/Sombrero")
+                        else:
+                            print("Capucha")
                     else:
                         r = pedir_si_no("Q9: ¿Ayuda a ver mejor?")
                         if r == "s":
-                            print("Gafas")
+                            r = pedir_si_no("Q10: ¿Protege del sol?")
+                            if r == "s":
+                                print("Gafas de sol")
+                            else:
+                                print("Lentes")
                         else:
-                            print("Otro accesorio")
+                            r = pedir_si_no("Q10: ¿Es decorativo o para el cabello?")
+                            if r == "s":
+                                print("Diadema/Banda")
+                            else:
+                                print("Casco")
+                else:
+                    r = pedir_si_no("Q8: ¿Se lleva en las orejas?")
+                    if r == "s":
+                        print("Aretes/Pendientes")
+                    else:
+                        r = pedir_si_no("Q9: ¿Se lleva en el cuello?")
+                        if r == "s":
+                            r = pedir_si_no("Q10: ¿Es para abrigarse?")
+                            if r == "s":
+                                print("Bufanda")
+                            else:
+                                r = pedir_si_no("Q11: ¿Es de metal o joyería?")
+                                if r == "s":
+                                    print("Collar")
+                                else:
+                                    print("Corbata")
+                        else:
+                            r = pedir_si_no("Q10: ¿Se lleva en las manos o muñecas?")
+                            if r == "s":
+                                r = pedir_si_no("Q11: ¿Muestra la hora?")
+                                if r == "s":
+                                    print("Reloj")
+                                else:
+                                    r = pedir_si_no("Q12: ¿Es joyería decorativa?")
+                                    if r == "s":
+                                        print("Pulsera/Anillo")
+                                    else:
+                                        print("Guantes")
+                            else:
+                                r = pedir_si_no("Q11: ¿Se lleva en la cintura?")
+                                if r == "s":
+                                    print("Cinturón")
+                                else:
+                                    print("Otro accesorio")
     
     # VEHÍCULOS Y MEDIOS DE TRANSPORTE
     elif pedir_si_no("Q4: ¿Se usa para transportarse?") == "s":
