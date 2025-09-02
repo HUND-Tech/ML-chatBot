@@ -522,11 +522,11 @@ def rama_objeto():
         return
     r = pedir_si_no("Q9: ¿Es un producto de consumo?")
     if r == "s":
-        # pructo_consumo()
+        producto_consumo()
         return
     r = pedir_si_no("Q10: ¿Es un residuo o desecho?")
     if r == "s":
-        # residuo()
+        residuos()
         return
     print("No se pudo ubicar con las preguntas.")
 
@@ -1396,7 +1396,7 @@ def microorganismos():
     else:
         print("No se pudo identificar el microorganismo.")
 
-def obj_natural():#Q2
+def obj_natural():#Q7
     
    #MINERALES
     r = pedir_si_no("Q3: ¿Es un mineral?")
@@ -1673,7 +1673,7 @@ def obj_natural():#Q2
                 else:
                     print("Fragmento de hueso")
 
-def obj_artificial():#Q3
+def obj_artificial():#Q8
     
     # MÁQUINAS Y ELECTRÓNICOS
     r = pedir_si_no("Q4: ¿Requiere electricidad para funcionar?")
@@ -1889,7 +1889,7 @@ def obj_artificial():#Q3
                         if r == "s":
                             print("Camión")
                         else:
-                            print("Automóvil")
+                            print("Carro")
                 else:
                     r = pedir_si_no("Q10: ¿Tiene ruedas?")
                     if r == "s":
@@ -2050,7 +2050,7 @@ def obj_artificial():#Q3
                         if r == "s":
                             print("Espátula/Cuchara de cocina")
                         else:
-                            print("Abrelatas/Pelador")
+                            print("Abrelatas")
                     else:
                         print("Plato/Tazón")
         else:
@@ -2112,6 +2112,550 @@ def obj_artificial():#Q3
                     else:
                         print("Otro utensilio")
 
+def producto_consumo():#9 
+    
+    # PRODUCTOS DE CONSUMO
+    r = pedir_si_no("Q10: ¿Es comestible o bebible?")
+    if r == "s":
+        
+        # ALIMENTOS Y BEBIDAS
+        r = pedir_si_no("Q11: ¿Es líquido?")
+        if r == "s":
+            
+            # bebidas
+            r = pedir_si_no("Q12: ¿Contiene alcohol?")
+            if r == "s":
+                r = pedir_si_no("Q13: ¿Es destilado?")
+                if r == "s":
+                    r = pedir_si_no("Q14: ¿Es transparente?")
+                    if r == "s":
+                        print("Vodka/Tequila")
+                    else:
+                        print("Whisky/Ron")
+                else:
+                    r = pedir_si_no("Q14: ¿Es espumoso?")
+                    if r == "s":
+                        print("Cerveza/Champagne")
+                    else:
+                        print("Vino")
+            else:
+                r = pedir_si_no("Q13: ¿Normalmente está caliente?")
+                if r == "s":
+                    r = pedir_si_no("Q14: ¿Contiene cafeína?")
+                    if r == "s":
+                        print("Café")
+                    else:
+                        print("Té/Chocolate caliente")
+                else:
+                    r = pedir_si_no("Q14: ¿Es gaseoso?")
+                    if r == "s":
+                        r = pedir_si_no("Q15: ¿Es dulce?")
+                        if r == "s":
+                            print("Refresco")
+                        else:
+                            print("Agua mineral")
+                    else:
+                        r = pedir_si_no("Q15: ¿Es de origen animal?")
+                        if r == "s":
+                            print("Leche")
+                        else:
+                            r = pedir_si_no("Q16: ¿Su líquido proviene de una fruta?")
+                            if r == "s":
+                                print("Jugo")
+                            else:
+                                print("Agua (como bebida)")
+        else:
+            
+            # alimentos sólidos
+            r = pedir_si_no("Q3: ¿Es dulce?")
+            if r == "s":
+                r = pedir_si_no("Q4: ¿Es procesado?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Se hornea?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Tiene relleno?")
+                        if r == "s":
+                            print("Pastel/Dona")
+                        else:
+                            print("Galleta/Pan dulce")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es de chocolate?")
+                        if r == "s":
+                            print("Chocolate")
+                        else:
+                            print("Caramelo/Gomita/Dulce")
+                else:
+                    r = pedir_si_no("Q5: ¿Crece en árbol?")
+                    if r == "s":
+                        print("Fruta")
+                    else:
+                        print("Miel")
+            else:
+                r = pedir_si_no("Q4: ¿Es de origen animal?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Es carne?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Es de res?")
+                        if r == "s":
+                            print("Carne de res")
+                        else:
+                            r = pedir_si_no("Q7: ¿Es de ave?")
+                            if r == "s":
+                                print("Pollo/Pavo")
+                            else:
+                                print("Cerdo/Pescado")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es lácteo?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Es sólido?")
+                            if r == "s":
+                                print("Queso")
+                            else:
+                                print("Yogurt")
+                        else:
+                            print("Huevo")
+                else:
+                    r = pedir_si_no("Q5: ¿Se cocina antes de comer?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Es cereal/grano?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Se hierve en agua?")
+                            if r == "s":
+                                print("Arroz/Pasta")
+                            else:
+                                print("Pan")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es procesado?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Es salado?")
+                            if r == "s":
+                                print("Papas fritas/Galletas saladas")
+                            else:
+                                print("Cereal")
+                        else:
+                            print("Ensalada/Fruta")
+    
+    # MEDICAMENTOS Y SUPLEMENTOS
+    elif pedir_si_no("Q2: ¿Es para la salud o medicina?") == "s":
+        
+        r = pedir_si_no("Q3: ¿Es líquido?")
+        if r == "s":
+            r = pedir_si_no("Q4: ¿Se toma por la boca?")
+            if r == "s":
+                r = pedir_si_no("Q5: ¿Es para niños principalmente?")
+                if r == "s":
+                    print("Jarabe infantil")
+                else:
+                    print("Jarabe para adultos")
+            else:
+                r = pedir_si_no("Q5: ¿Se aplica en la piel?")
+                if r == "s":
+                    print("Crema/Pomada")
+                else:
+                    print("Gotas para ojos/oídos")
+        else:
+            r = pedir_si_no("Q4: ¿Es píldora o pastilla?")
+            if r == "s":
+                r = pedir_si_no("Q5: ¿Es para dolor?")
+                if r == "s":
+                    r = pedir_si_no("Q6: ¿Es de venta libre?")
+                    if r == "s":
+                        print("Aspirina/Paracetamol")
+                    else:
+                        print("Analgésico más fuerte")
+                else:
+                    r = pedir_si_no("Q6: ¿Es vitamina o suplemento?")
+                    if r == "s":
+                        print("Vitaminas/Suplemento")
+                    else:
+                        r = pedir_si_no("Q7: ¿Es antibiótico?")
+                        if r == "s":
+                            print("Antibiótico")
+                        else:
+                            print("Medicina especializada")
+            else:
+                r = pedir_si_no("Q5: ¿Se aplica en la piel?")
+                if r == "s":
+                    print("Vendaje/Curita")
+                else:
+                    print("Inyección/Vacuna")
+    
+    # PRODUCTOS DE HIGIENE Y LIMPIEZA
+    else:
+        r = pedir_si_no("Q3: ¿Es para higiene personal?")
+        if r == "s":
+            
+            # higiene personal
+            r = pedir_si_no("Q4: ¿Es líquido?")
+            if r == "s":
+                r = pedir_si_no("Q5: ¿Es para el cabello?")
+                if r == "s":
+                    r = pedir_si_no("Q6: ¿Limpia el cabello?")
+                    if r == "s":
+                        print("Shampoo")
+                    else:
+                        print("Acondicionador")
+                else:
+                    r = pedir_si_no("Q6: ¿Es para el cuerpo?")
+                    if r == "s":
+                        r = pedir_si_no("Q7: ¿Hace espuma?")
+                        if r == "s":
+                            print("Jabón líquido/Gel de baño")
+                        else:
+                            print("Loción/Crema corporal")
+                    else:
+                        r = pedir_si_no("Q7: ¿Es para la boca?")
+                        if r == "s":
+                            print("Enjuague bucal")
+                        else:
+                            print("Perfume/Colonia")
+            else:
+                r = pedir_si_no("Q5: ¿Es para los dientes?")
+                if r == "s":
+                    r = pedir_si_no("Q6: ¿Es pasta?")
+                    if r == "s":
+                        print("Pasta dental")
+                    else:
+                        print("Cepillo de dientes")
+                else:
+                    r = pedir_si_no("Q6: ¿Es para el cuerpo?")
+                    if r == "s":
+                        r = pedir_si_no("Q7: ¿Absorbe humedad?")
+                        if r == "s":
+                            print("Desodorante")
+                        else:
+                            print("Jabón en barra")
+                    else:
+                        r = pedir_si_no("Q7: ¿Es de papel?")
+                        if r == "s":
+                            r = pedir_si_no("Q8: ¿Es para la nariz?")
+                            if r == "s":
+                                print("Pañuelos")
+                            else:
+                                print("Papel higiénico")
+                        else:
+                            print("Toalla sanitaria/Pañal")
+        else:
+            
+            # productos de limpieza del hogar
+            r = pedir_si_no("Q4: ¿Es líquido?")
+            if r == "s":
+                r = pedir_si_no("Q5: ¿Es para lavar ropa?")
+                if r == "s":
+                    r = pedir_si_no("Q6: ¿Suaviza la ropa?")
+                    if r == "s":
+                        print("Suavizante")
+                    else:
+                        print("Detergente líquido")
+                else:
+                    r = pedir_si_no("Q6: ¿Es para lavar trastes?")
+                    if r == "s":
+                        print("Jabón para trastes")
+                    else:
+                        r = pedir_si_no("Q7: ¿Desinfecta?")
+                        if r == "s":
+                            print("Cloro/Desinfectante")
+                        else:
+                            print("Limpiador multiusos")
+            else:
+                r = pedir_si_no("Q5: ¿Es en polvo?")
+                if r == "s":
+                    r = pedir_si_no("Q6: ¿Es para lavar ropa?")
+                    if r == "s":
+                        print("Detergente en polvo")
+                    else:
+                        print("Limpiador en polvo")
+                else:
+                    r = pedir_si_no("Q6: ¿Se usa para limpiar superficies?")
+                    if r == "s":
+                        r = pedir_si_no("Q7: ¿Es abrasivo?")
+                        if r == "s":
+                            print("Esponja/Fibra")
+                        else:
+                            print("Toallitas húmedas")
+                    else:
+                        r = pedir_si_no("Q7: ¿Absorbe olores?")
+                        if r == "s":
+                            print("Ambientador")
+                        else:
+                            print("Bolsas de basura")
+
+def residuos(): #10
+   
+    # RESIDUOS Y DESECHOS
+    r = pedir_si_no("Q1: ¿Es de origen orgánico?")
+    if r == "s":
+        
+        # RESIDUOS ORGÁNICOS
+        r = pedir_si_no("Q2: ¿Proviene de comida?")
+        if r == "s":
+            
+            # desechos de comida
+            r = pedir_si_no("Q3: ¿Es de fruta?")
+            if r == "s":
+                r = pedir_si_no("Q4: ¿Es la parte exterior?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Es dura?")
+                    if r == "s":
+                        print("Cáscara de coco/nuez")
+                    else:
+                        print("Cáscara de plátano/naranja")
+                else:
+                    r = pedir_si_no("Q5: ¿Es el centro/semilla?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Es grande y duro?")
+                        if r == "s":
+                            print("Hueso de durazno/aguacate")
+                        else:
+                            print("Semillas pequeñas")
+                    else:
+                        print("Pulpa de fruta podrida")
+            else:
+                r = pedir_si_no("Q4: ¿Es de verdura?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Son hojas exteriores?")
+                    if r == "s":
+                        print("Hojas de lechuga/col")
+                    else:
+                        r = pedir_si_no("Q6: ¿Son cáscaras?")
+                        if r == "s":
+                            print("Cáscara de papa/cebolla")
+                        else:
+                            print("Verdura podrida")
+                else:
+                    r = pedir_si_no("Q5: ¿Es de carne o pescado?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Son huesos?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Son grandes?")
+                            if r == "s":
+                                print("Huesos de pollo/res")
+                            else:
+                                print("Espinas de pescado")
+                        else:
+                            print("Grasa/piel de carne")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es pan o cereal?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Está mohoso?")
+                            if r == "s":
+                                print("Pan con moho")
+                            else:
+                                print("Pan duro/migajas")
+                        else:
+                            r = pedir_si_no("Q7: ¿Es líquido?")
+                            if r == "s":
+                                print("Aceite usado/leche agria")
+                            else:
+                                print("Comida echada a perder")
+        else:
+            
+            # desechos de plantas/jardín
+            r = pedir_si_no("Q3: ¿Es de árbol?")
+            if r == "s":
+                r = pedir_si_no("Q4: ¿Son hojas?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Están secas?")
+                    if r == "s":
+                        print("Hojas secas")
+                    else:
+                        print("Hojas verdes caídas")
+                else:
+                    r = pedir_si_no("Q5: ¿Son ramas?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Son gruesas?")
+                        if r == "s":
+                            print("Ramas gruesas/troncos")
+                        else:
+                            print("Ramas/palitos")
+                    else:
+                        print("Corteza de árbol")
+            else:
+                r = pedir_si_no("Q4: ¿Es pasto o césped?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Está cortado?")
+                    if r == "s":
+                        print("Pasto cortado")
+                    else:
+                        print("Pasto seco/maleza")
+                else:
+                    r = pedir_si_no("Q5: ¿Son flores?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Están marchitas?")
+                        if r == "s":
+                            print("Flores marchitas")
+                        else:
+                            print("Pétalos caídos")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es de jardín?")
+                        if r == "s":
+                            print("Hojas de plantas/arbustos")
+                        else:
+                            print("Materia orgánica descompuesta")
+    
+    # RESIDUOS INORGÁNICOS
+    else:
+        r = pedir_si_no("Q2: ¿Es de plástico?")
+        if r == "s":
+            
+            # desechos de plástico
+            r = pedir_si_no("Q3: ¿Era un envase?")
+            if r == "s":
+                r = pedir_si_no("Q4: ¿Era para bebidas?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Es transparente?")
+                    if r == "s":
+                        print("Botella de agua/refresco (usado/inservible)")
+                    else:
+                        print("Botella de leche/jugo (usado/inservible)")
+                else:
+                    r = pedir_si_no("Q5: ¿Era para comida?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Es rígido?")
+                        if r == "s":
+                            print("Envase de yogurt/margarina (usado/inservible)")
+                        else:
+                            print("Bolsa de pan/snacks (usado/inservible)")
+                    else:
+                        r = pedir_si_no("Q6: ¿Era para productos de limpieza?")
+                        if r == "s":
+                            print("Envase de detergente/shampoo (usado/inservible)")
+                        else:
+                            print("Envase de medicinas (usado/inservible)")
+            else:
+                r = pedir_si_no("Q4: ¿Es pequeño?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Es una tapa?")
+                    if r == "s":
+                        print("Tapa de botella/frasco")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es envoltura?")
+                        if r == "s":
+                            print("Envoltura de dulce/producto (usado/inservible)")
+                        else:
+                            print("Juguete pequeño roto")
+                else:
+                    r = pedir_si_no("Q5: ¿Era un objeto de uso diario?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Era para la cocina?")
+                        if r == "s":
+                            print("Utensilio de cocina roto")
+                        else:
+                            print("Objeto de plástico roto")
+                    else:
+                        print("Mueble de plástico roto")
+        else:
+            r = pedir_si_no("Q3: ¿Es de vidrio?")
+            if r == "s":
+                
+                # desechos de vidrio
+                r = pedir_si_no("Q4: ¿Era un envase?")
+                if r == "s":
+                    r = pedir_si_no("Q5: ¿Era para bebidas?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Era de cerveza/refresco?")
+                        if r == "s":
+                            print("Botella de cerveza/refresco (usado/inservible)")
+                        else:
+                            print("Botella de vino/licor (usado/inservible)")
+                    else:
+                        r = pedir_si_no("Q6: ¿Era para comida?")
+                        if r == "s":
+                            print("Frasco de mermelada (usado/inservible)")
+                        else:
+                            print("Frasco de medicinas/cosméticos (usado/inservible)")
+                else:
+                    r = pedir_si_no("Q5: ¿Está roto?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Era ventana/espejo?")
+                        if r == "s":
+                            print("Vidrio de ventana/espejo")
+                        else:
+                            print("Vaso/plato de vidrio roto")
+                    else:
+                        print("Objeto de vidrio desechado")
+            else:
+                r = pedir_si_no("Q4: ¿Es de metal?")
+                if r == "s":
+                    
+                    # desechos de metal
+                    r = pedir_si_no("Q5: ¿Era un envase?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Era lata de comida?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Era grande?")
+                            if r == "s":
+                                print("Lata de atún (usado/inservible)")
+                            else:
+                                print("Lata pequeña (usado/inservible)")
+                        else:
+                            r = pedir_si_no("Q7: ¿Era de bebida?")
+                            if r == "s":
+                                print("Lata de refresco/cerveza (usado/inservible)")
+                            else:
+                                print("Envase metálico/aerosol (usado/inservible)")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es pequeño?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Son clavos/tornillos?")
+                            if r == "s":
+                                print("Clavos/tornillos oxidados")
+                            else:
+                                print("Alambre/metal pequeño")
+                        else:
+                            r = pedir_si_no("Q7: ¿Era electrodoméstico?")
+                            if r == "s":
+                                print("Electrodoméstico descompuesto")
+                            else:
+                                print("Chatarra/metal grande")
+                else:
+                    
+                    # otros materiales inorgánicos
+                    r = pedir_si_no("Q5: ¿Es de papel/cartón?")
+                    if r == "s":
+                        r = pedir_si_no("Q6: ¿Es periódico/revista?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Está mojado?")
+                            if r == "s":
+                                print("Papel mojado/inservible")
+                            else:
+                                print("Periódico/revista vieja")
+                        else:
+                            r = pedir_si_no("Q7: ¿Es cartón?")
+                            if r == "s":
+                                r = pedir_si_no("Q8: ¿Era caja?")
+                                if r == "s":
+                                    print("Caja de cartón")
+                                else:
+                                    print("Cartón corrugado")
+                            else:
+                                print("Papel usado/documentos")
+                    else:
+                        r = pedir_si_no("Q6: ¿Es de tela?")
+                        if r == "s":
+                            r = pedir_si_no("Q7: ¿Era ropa?")
+                            if r == "s":
+                                print("Ropa vieja/rota")
+                            else:
+                                print("Trapos/telas desechadas")
+                        else:
+                            r = pedir_si_no("Q7: ¿Es escombro de construcción?")
+                            if r == "s":
+                                r = pedir_si_no("Q8: ¿Es de concreto/cemento?")
+                                if r == "s":
+                                    print("Escombro de concreto")
+                                else:
+                                    print("Ladrillos/blocks rotos")
+                            else:
+                                r = pedir_si_no("Q8: ¿Es electrónico?")
+                                if r == "s":
+                                    r = pedir_si_no("Q9: ¿Es pequeño?")
+                                    if r == "s":
+                                        print("Celular/dispositivo (usado/inservible)")
+                                    else:
+                                        print("Computadora/TV descompuesta")
+                                else:
+                                    print("Otro desecho inorgánico")
 
 def lugares_naturales(): #Q4
     r = pedir_si_no("Q6: ¿Es principalmente acuático?")
