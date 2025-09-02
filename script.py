@@ -47,26 +47,7 @@ def rama_lugares():
     if r == "s":
         construcciones_humanas()
         return
-    print("No se pudo ubicar con las preguntas.")
-
-def rama_persona():
-    r = pedir_si_no("Q5: ¿Es un animal?")
-    if r == "s":
-        #animales()
-        return
-    r = pedir_si_no("Q6: ¿Es una planta?")
-    if r == "s":
-        # plantas()
-        return
-    r = pedir_si_no("Q7: ¿Es un hongo?")
-    if r == "s":
-        # hongo()
-        return
-    r = pedir_si_no("Q8: ¿Es un microorganismo?")
-    if r == "s":
-        # microorganismos()
-        return
-    print("No se pudo ubicar con las preguntas.")
+    print("Estas pensando en un lugar muy poco común")
 
 def rama_fenomeno():
     
@@ -355,14 +336,8 @@ def rama_objeto():
         return
     print("No se pudo ubicar con las preguntas.")
 
-
-
-
 #------------------------------------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------------------------------------#
-
-
-
 
 #------------------------------------------- SUB-RAMAS PRINCIPALES ------------------------------------------#
 def identificar_mamifero():  #salvajes mamiferos
@@ -2209,10 +2184,6 @@ def construcciones_humanas():
         return
 
 
-
-
-
-
 #------------------------------------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------------------------------------#
 
@@ -2239,7 +2210,7 @@ def main():
         return
 
     # Q2
-    r = pedir_si_no("Q2: ¿Es un ser vivo, fruta o verdura?")
+    r = pedir_si_no("Q2: ¿Es un organismo vivo o un producto directamente derivado de uno (como plantas o frutas)?")
     if r == "s":
         # Agotar rama Seres vivos
         rama_seres_vivos()
@@ -2252,14 +2223,6 @@ def main():
         return
 
     # Q4
-    r = pedir_si_no("Q4: ¿Es una persona o un personaje (real o ficticio)?")
-    if r == "s":
-        # Agotar rama Persona/Personaje
-        rama_persona()
-        # Entraste en: Persona/Personaje -> (aquí agotar preguntas de esa categoría).
-        return
-
-    # Q5
     r = pedir_si_no("Q5: ¿Es un fenómeno natural, un cuerpo celeste o una forma de energía (por ejemplo: lluvia, sol, luz, terremoto)?")
     if r == "s":
         # Agotar rama Fenómenos / Cuerpos celestes / Energía
@@ -2267,7 +2230,7 @@ def main():
         # Entraste en: Fenómeno/Cuerpo celeste/Energía -> (aquí agotar preguntas de esa categoría).
         return
 
-    # Q6
+    # Q5
     r = pedir_si_no("Q6: ¿Es un objeto inanimado o cosa tangible (sea natural o fabricada por humanos)?")
     if r == "s":
         # Agotar rama Objetos inanimados
