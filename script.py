@@ -1,23 +1,217 @@
 
 #--------------------------------------------  RAMAS PRINCIPALES --------------------------------------------#
 def rama_abstracto():
-    r = pedir_si_no("Q2: ¿Es un animal?")
+    """Rama para conceptos abstractos e intangibles"""
+    print("\n--- CATEGORÍA: ABSTRACTOS/INTANGIBLES ---")
+    
+    # EMOCIONES Y SENTIMIENTOS
+    r = pedir_si_no("Q3: ¿Está relacionado con emociones o sentimientos?")
     if r == "s":
-        #animales()
+        r = pedir_si_no("Q4: ¿Es una emoción positiva?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿Se siente hacia otras personas?")
+            if r == "s":
+                r = pedir_si_no("Q6: ¿Afecto profundo?")
+                if r == "s":
+                    print("EMOCIÓN: amor")
+                else:
+                    r = pedir_si_no("Q7: ¿Implica agradecimiento hacia otro?")
+                    if r == "s":
+                        print("EMOCIÓN: gratitud")
+                    else:
+                        r = pedir_si_no("Q8: ¿Es admiración hacia alguien o algo?")
+                        if r == "s":
+                            print("EMOCIÓN: respeto")
+                        else:
+                            r = pedir_si_no("Q9: ¿Es entusiasmo o motivación?")
+                            if r == "s":
+                                print("EMOCIÓN: entusiasmo")
+                            else:
+                                print("EMOCIÓN POSITIVA GENERAL: felicidad/placer")
+            else:
+                r = pedir_si_no("Q6: ¿Es expectativa positiva hacia el futuro?")
+                if r == "s":
+                    print("EMOCIÓN: esperanza")
+                else:
+                    r = pedir_si_no("Q7: ¿Es sensación de paz y armonía?")
+                    if r == "s":
+                        print("EMOCIÓN: serenidad")
+                    else:
+                        print("EMOCIÓN POSITIVA GENERAL: placer, satisfacción, bienestar")
+        else:
+            # EMOCIONES NEGATIVAS
+            r = pedir_si_no("Q5: ¿Involucra a otras personas?")
+            if r == "s":
+                r = pedir_si_no("Q6: ¿Se relaciona con la comparación?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Es envidia o celos?")
+                    if r == "s":
+                        print("EMOCIÓN NEGATIVA: envidia")
+                    else:
+                        r = pedir_si_no("Q8: ¿Es más una emoción de juicio social?")
+                        if r == "s":
+                            print("EMOCIÓN NEGATIVA: Vergüenza o humillación")
+                else:
+                    r = pedir_si_no("Q7: ¿Puede provocar llanto y malestar?")
+                    if r == "s":
+                        print("EMOCIÓN NEGATIVA: Tristeza")
+                    else:
+                        r = pedir_si_no("Q8: ¿Causa irritación intensa?")
+                        if r == "s":
+                            print("EMOCIÓN NEGATIVA: Enojo, odio o ira")
+                        else:
+                            r = pedir_si_no("Q9: ¿Es una respuesta ante una amenaza?")
+                            if r == "s":
+                                r = pedir_si_no("Q10: ¿La amenaza es un peligro presente, claro y conocido?")
+                                if r == "s":
+                                    print("EMOCIÓN NEGATIVA: miedo")
+                                else:
+                                    print("EMOCIÓN NEGATIVA: ansiedad")
+            else:
+                r = pedir_si_no("Q6: ¿Se relaciona con el pasado?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Tiene que ver con recordar momentos buenos?")
+                    if r == "s":
+                        print("EMOCIÓN NEGATIVA: Nostalgia")
+                    else:
+                        r = pedir_si_no("Q8: ¿Surge del remordimiento?")
+                        if r == "s":
+                            print("EMOCIÓN NEGATIVA: Culpa")
         return
-    r = pedir_si_no("Q3: ¿Es una planta?")
+
+    # CONCEPTOS MATEMÁTICOS
+    r = pedir_si_no("Q3: ¿Es un concepto matemático o numérico?")
     if r == "s":
-        # plantas()
+        r = pedir_si_no("Q4: ¿Es un número específico?")
+        if r == "s":
+            print("NÚMEROS: enteros, decimales, fracciones, números primos, π, e, etc")
+        else:
+            r = pedir_si_no("Q5: ¿Es una operación matemática?")
+            if r == "s":
+                print("OPERACIONES: suma, resta, multiplicación, división, potencia, raíz, integral, derivada")
+            else:
+                r = pedir_si_no("Q6: ¿Se relaciona con magnitudes y medidas?")
+                if r == "s":
+                    print("MAGNITUDES: Longitud, área, volumen")
+                else:
+                    r = pedir_si_no("Q7: ¿Es una rama de las matemáticas?")
+                    if r == "s":
+                        print("RAMA MATEMÁTICA: Álgebra, geometría, trigonometría, probabilidad, estadística, cálculo")
         return
-    r = pedir_si_no("Q4: ¿Es un hongo?")
+
+    # IDEAS FILOSÓFICAS / CONCEPTOS ABSTRACTOS
+    r = pedir_si_no("Q3: ¿Es una idea filosófica o concepto abstracto?")
     if r == "s":
-        # hongo()
+        r = pedir_si_no("Q4: ¿Está relacionado con la existencia o la realidad?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿Se refiere al mero hecho de existir?")
+            if r == "s":
+                print("ABSTRACTO: Existencia, Ser")
+            else:
+                r = pedir_si_no("Q6: ¿Es lo opuesto (ausencia total)?")
+                if r == "s":
+                    print("ABSTRACTO: Nada")
+                else:
+                    r = pedir_si_no("Q7: ¿Se refiere a la existencia real y efectiva de algo?")
+                    if r == "s":
+                        print("ABSTRACTO: Realidad")
+                    else:
+                        r = pedir_si_no("Q8: ¿Es el estado de conocimiento de la realidad interna?")
+                        if r == "s":
+                            print("ABSTRACTO: Consciencia")
+        else:
+            r = pedir_si_no("Q5: ¿Se relaciona con las Dimensiones Universales?")
+            if r == "s":
+                r = pedir_si_no("Q6: ¿Es una medida continua?")
+                if r == "s":
+                    print("DIMENSIONES: Tiempo")
+                else:
+                    r = pedir_si_no("Q7: ¿Es la extensión que ocupa un objeto?")
+                    if r == "s":
+                        print("DIMENSIONES: Espacio")
         return
-    r = pedir_si_no("Q5: ¿Es un microorganismo?")
+
+    # CONCEPTOS TEMPORALES
+    r = pedir_si_no("Q3: ¿Está relacionado con el tiempo?")
     if r == "s":
-        # microorganismos()
+        print("CONCEPTOS TEMPORALES: tiempo, eternidad, momento, pasado, presente, futuro, ciclo, destino")
         return
-    print("No se pudo ubicar con las preguntas.")
+
+    # CONCEPTOS ESPIRITUALES / RELIGIOSOS
+    r = pedir_si_no("Q3: ¿Es un concepto espiritual o religioso?")
+    if r == "s":
+        print("CONCEPTOS ESPIRITUALES: alma, fe, dios, karma, nirvana, reencarnación, infierno, cielo, pecado")
+        return
+
+    # CUALIDADES MORALES / VALORES
+    r = pedir_si_no("Q3: ¿Se trata de una cualidad moral?")
+    if r == "s":
+        r = pedir_si_no("Q4: ¿Se enfoca en cómo tratamos a los demás?")
+        if r == "s":
+            print("VALOR: Amistad, solidaridad, empatía")
+        else:
+            r = pedir_si_no("Q5: ¿Se refiere a lo que consideramos correcto o justo?")
+            if r == "s":
+                print("VALOR: Justicia, igualdad") 
+            else:
+                r = pedir_si_no("Q6: ¿Implica apoyo o cuidado mutuo?")
+                if r == "s":
+                    print("VALOR: Solidaridad")
+        return
+
+    # CONCEPTOS LÓGICOS
+    r = pedir_si_no("Q3: ¿Es un concepto lógico, relacionado con la verdad o el razonamiento?")   
+    if r == "s":
+        r = pedir_si_no("Q4: ¿Es una cualidad de una proposición?")
+        if r == "s":
+            print("CONCEPTO: verdad, falsedad")
+        else:
+            r = pedir_si_no("Q5: ¿Es un fenómeno contradictorio?")
+            if r == "s":
+                print("CONCEPTO: Paradoja")
+        return
+
+    # IDEAS, MEMORIA Y LENGUAJE
+    r = pedir_si_no("Q3: ¿Se relaciona con ideas, memoria o lenguaje?")
+    if r == "s":
+        r = pedir_si_no("Q4: ¿Es la capacidad de recordar?")
+        if r == "s":
+            print("PENSAMIENTO: Memoria, recuerdo")
+        else:
+            r = pedir_si_no("Q5: ¿Es una creación mental que no existe físicamente?")
+            if r == "s":
+                print("PENSAMIENTO: Imaginación")
+            else: 
+                r = pedir_si_no("Q6: ¿Es la unidad básica del lenguaje?")
+                if r == "s": 
+                    print("LENGUAJE: Palabra, letra, simbolo, signo")
+                else:
+                    r = pedir_si_no("Q7: ¿Se refiere a la capacidad de razonar o reflexionar?")
+                if r == "s":
+                    print("PENSAMIENTO: Pensamiento crítico, reflexión")
+        return
+
+    # ORGANIZACIÓN SOCIAL
+    r = pedir_si_no("Q3: ¿Está ligado a cómo se organiza la sociedad o en las personas entre sí?")
+    if r == "s":
+        r = pedir_si_no("Q4: ¿Es la capacidad de decidir por uno mismo?")
+        if r == "s":
+            print("SOCIAL: Libertad")
+        else:
+            r = pedir_si_no("Q5: ¿Es el ejercicio de control o influencia?")
+            if r == "s":
+                print("SOCIAL: Poder")
+            else:
+                r = pedir_si_no("Q6: ¿Es el aprecio que uno tiene por sí mismo?")
+                if r == "s":
+                    print("SOCIAL: Amor propio, autoestima, dignidad")
+                else:
+                    r = pedir_si_no("Q7: ¿Se refiere a la relación de confianza o cooperación con otros?")
+                if r == "s":
+                    print("SOCIAL: Confianza, cooperación, solidaridad")
+
+        return
+
 
 def rama_seres_vivos():
     r = pedir_si_no("Q3: ¿Es un animal?")
@@ -133,7 +327,7 @@ def rama_fenomeno():
                 return
             r = pedir_si_no("Q5: ¿Se refiere a CUERPOS/EVENTOS orbitales?")
             if r == "s":
-                print("ASTRONÓMICOS · CUERPOS: eclipse, conjunción, oposición, tránsito")
+                print("ASTRONÓMICOS · CUERPOS: planetas, sol, luna, estrellas")
                 return
             r = pedir_si_no("Q5: ¿Es un EVENTO astrofísico?")
             if r == "s":
@@ -164,7 +358,7 @@ def rama_fenomeno():
             print("BIOLÓGICOS · BIOLUMINISCENCIA: luz natural en seres vivos")
             return
         
-        print("FENÓMENO NATURAL NO ESPECIFICADO")
+        print("NADA")
         return
     
    
@@ -205,8 +399,8 @@ def rama_fenomeno():
         print("ENERGÍA · CONCEPTOS COSMOLÓGICOS: energía oscura, materia oscura")
         return
     
-    # TERCER NIVEL: FENÓMENOS FÍSICOS FUNDAMENTALES
-    r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO fundamental?")
+    
+    r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Está relacionado con la ESTRUCTURA ATÓMICA?")
         if r == "s":
@@ -250,7 +444,7 @@ def rama_fenomeno():
                 return
             r = pedir_si_no("Q5: ¿ELECTROMAGNETISMO?")
             if r == "s":
-                print("FÍSICOS · ELECTROMAGNETISMO: campo EM, luz, electricidad, magnetismo")
+                print("FÍSICOS · ELECTROMAGNETISMO: campos electromagneticos, luz, electricidad, magnetismo")
                 return
             r = pedir_si_no("Q5: ¿NUCLEAR FUERTE?")
             if r == "s":
@@ -273,13 +467,13 @@ def rama_fenomeno():
             if r == "s":
                 print("CUÁNTICOS · ENTRELAZAMIENTO: no-localidad")
                 return
-            print("CUÁNTICOS · TÚNELES: efecto túnel cuántico")
+            print("CUÁNTICOS · TÚNELES: efecto túnel")
             return
         
         print("FENÓMENO FÍSICO FUNDAMENTAL NO ESPECIFICADO")
         return
     
-    # CUARTO NIVEL: FENÓMENOS QUÍMICOS
+    
     r = pedir_si_no("Q3: ¿Es un FENÓMENO QUÍMICO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Es una REACCIÓN?")
@@ -297,7 +491,7 @@ def rama_fenomeno():
         print("QUÍMICOS · PROPIEDADES: pH, conductividad, reactividad, catálisis")
         return
     
-    # QUINTO NIVEL: FENÓMENOS HUMANOS/SOCIALES (opcional)
+    
     r = pedir_si_no("Q3: ¿Es un FENÓMENO SOCIAL o HUMANO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Se refiere a GLOBALIZACIÓN?")
