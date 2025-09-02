@@ -108,7 +108,7 @@ def rama_abstracto():
             else:
                 r = pedir_si_no("Q6: ¿Es lo opuesto (ausencia total)?")
                 if r == "s":
-                    print("ABSTRACTO: Nada")
+                    print("ABSTRACTO: Nada o muerte")
                 else:
                     r = pedir_si_no("Q7: ¿Se refiere a la existencia real y efectiva de algo?")
                     if r == "s":
@@ -132,7 +132,7 @@ def rama_abstracto():
     # CONCEPTOS TEMPORALES
     r = pedir_si_no("Q3: ¿Está relacionado con el tiempo?")
     if r == "s":
-        print("CONCEPTOS TEMPORALES: tiempo, eternidad, momento, pasado, presente, futuro, ciclo, destino")
+        print("CONCEPTOS TEMPORALES: tiempo, hora, eternidad, momento, pasado, presente, futuro, ciclo, destino")
         return
 
     # CONCEPTOS ESPIRITUALES / RELIGIOSOS
@@ -207,7 +207,7 @@ def rama_abstracto():
                     r = pedir_si_no("Q7: ¿Se refiere a la relación de confianza o cooperación con otros?")
                 if r == "s":
                     print("SOCIAL: Confianza, cooperación, solidaridad")
-
+        print("Pensaste en algo que es intagible+")
         return
 
 
@@ -228,6 +228,10 @@ def rama_seres_vivos():
     if r == "s":
         microorganismos()
         return
+    r = pedir_si_no("Q7: ¿Es un ser humano?")
+    if r == "s":
+        print("Pensaste en un SER HUMANO")
+        return
     print("No se pudo ubicar con las preguntas.")
 
 def rama_lugares():
@@ -247,157 +251,353 @@ def rama_fenomeno():
     if r == "s":
         r = pedir_si_no("Q4: ¿Es METEOROLÓGICO/ATMOSFÉRICO?")
         if r == "s":
-            
-            r = pedir_si_no("Q5: ¿Está relacionado con la PRECIPITACIÓN?")
-            if r == "s":
-                print("METEOROLÓGICOS · PRECIPITACIÓN: lluvia, nieve, granizo, aguanieve, rocío")
-                return
-            r = pedir_si_no("Q5: ¿Está relacionado con el VIENTO?")
-            if r == "s":
-                print("METEOROLÓGICOS · VIENTO: brisa, ventisca, huracán, tornado, tifón, ciclón")
-                return
-            r = pedir_si_no("Q5: ¿Está relacionado con FENÓMENOS ELÉCTRICOS?")
 
+            r = pedir_si_no("Q5: ¿Tiene que ver con la precipitación de agua o nieve?")
             if r == "s":
-                print("METEOROLÓGICOS · ELÉCTRICOS: rayo, relámpago, trueno, tormenta eléctrica")
+                r = pedir_si_no("Q6: ¿Es agua líquida que cae del cielo?")
+                if r == "s":
+                    print("¡Pensaste en lluvia!")
+                else:
+                    r = pedir_si_no("Q6: ¿Es hielo sólido que cae del cielo?")
+                    if r == "s":
+                        r = pedir_si_no("Q7: ¿Son pequeños trozos de hielo redondeados?")
+                        if r == "s":
+                            print("¡Pensaste en granizo!")
+                        else:
+                            print("¡Pensaste en nieve o aguanieve!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con TEMPERATURA?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con el viento fuerte?")
             if r == "s":
-                print("METEOROLÓGICOS · TÉRMICOS: calor, frío, ola de calor, helada, punto de rocío")
+                r = pedir_si_no("Q6: ¿Es un viento muy local y de corta duración?")
+                if r == "s":
+                    print("¡Pensaste en ventisca o brisa fuerte!")
+                else:
+                    r = pedir_si_no("Q6: ¿Es un fenómeno más intenso y destructivo?")
+                    if r == "s":
+                        r = pedir_si_no("Q7: ¿Forma parte de un sistema ciclónico?")
+                        if r == "s":
+                            print("¡Pensaste en huracán o ciclón!")
+                        else:
+                            print("¡Pensaste en tornado o tifón!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con EFECTOS ÓPTICOS?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con rayos y truenos?")
             if r == "s":
-                print("METEOROLÓGICOS · ÓPTICOS: arcoíris, halo, espejismo, parhelio, corona solar")
+                r = pedir_si_no("Q6: ¿Ves luz en el cielo?")
+                if r == "s":
+                    print("¡Pensaste en relámpago!")
+                else:
+                    print("¡Pensaste en trueno!")
                 return
-            print("METEOROLÓGICOS · PRESIÓN: alta presión, baja presión, frente climático")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con calor o frío extremo?")
+            if r == "s":
+                r = pedir_si_no("Q6: ¿Es sensación de calor extremo?")
+                if r == "s":
+                    print("¡Pensaste en ola de calor o calor intenso!")
+                else:
+                    print("¡Pensaste en frío intenso o helada!")
+                return
+
+            r = pedir_si_no("Q5: ¿Produce efectos ópticos en el cielo?")
+            if r == "s":
+                r = pedir_si_no("Q6: ¿Aparece tras la lluvia y tiene varios colores?")
+                if r == "s":
+                    print("¡Pensaste en arcoíris!")
+                else:
+                    r = pedir_si_no("Q6: ¿Se forma alrededor del sol o la luna?")
+                    if r == "s":
+                        print("¡Pensaste en halo o corona solar!")
+                    else:
+                        print("¡Pensaste en espejismo o parhelio!")
+                return
+
+            # Si no corresponde a ninguna categoría anterior
+            print("¡Pensaste en fenómenos de presión atmosférica, como alta presión, baja presión o frente climático!")
             return
-        
+
         r = pedir_si_no("Q4: ¿Es GEOLÓGICO/TERRESTRE?")
         if r == "s":
-            
-            r = pedir_si_no("Q5: ¿Está relacionado con SISMOS o movimiento terrestre?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con movimientos de la tierra?")
             if r == "s":
-                print("GEOLÓGICOS · SÍSMICOS: terremoto, temblor, tsunami, maremoto")
+                r = pedir_si_no("Q6: ¿Se percibe como temblor local y breve?")
+                if r == "s":
+                    print("¡Pensaste en temblor!")
+                else:
+                    r = pedir_si_no("Q6: ¿Provoca olas gigantes en el mar?")
+                    if r == "s":
+                        print("¡Pensaste en tsunami o maremoto!")
+                    else:
+                        print("¡Pensaste en terremoto!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con VOLCANES?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con actividad volcánica?")
             if r == "s":
-                print("GEOLÓGICOS · VOLCÁNICOS: erupción, lava, ceniza, fumarola, magma")
+                r = pedir_si_no("Q6: ¿Es lava o ceniza que sale del volcán?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Es líquido caliente que fluye del volcán?")
+                    if r == "s":
+                        print("¡Pensaste en lava!")
+                    else:
+                        print("¡Pensaste en ceniza volcánica!")
+                else:
+                    r = pedir_si_no("Q7: ¿Son gases o vapor emitidos por el volcán?")
+                    if r == "s":
+                        print("¡Pensaste en fumarola!")
+                    else:
+                        print("¡Pensaste en magma bajo tierra!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con EROSIÓN/DERRUMBES?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con deslizamientos o derrumbes?")
             if r == "s":
-                print("GEOLÓGICOS · EROSIÓN: deslizamiento, avalancha, derrumbe, alud")
+                r = pedir_si_no("Q6: ¿Es nieve o tierra que cae en montaña de manera rápida?")
+                if r == "s":
+                    print("¡Pensaste en avalancha!")
+                else:
+                    r = pedir_si_no("Q6: ¿Es caída de tierra o rocas por ladera?")
+                    if r == "s":
+                        print("¡Pensaste en derrumbe o alud!")
+                    else:
+                        print("¡Pensaste en deslizamiento de tierra!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con FORMACIÓN del relieve?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con la formación de montañas o valles?")
             if r == "s":
-                print("GEOLÓGICOS · FORMACIÓN: montañas, valles, cañones, placas tectónicas")
+                r = pedir_si_no("Q6: ¿Es una elevación del terreno?")
+                if r == "s":
+                    print("¡Pensaste en montaña!")
+                else:
+                    r = pedir_si_no("Q6: ¿Es una depresión o abertura del terreno?")
+                    if r == "s":
+                        print("¡Pensaste en valle o cañón!")
+                    else:
+                        print("¡Pensaste en placas tectónicas en movimiento!")
                 return
-            print("GEOLÓGICOS · SUBSUELO: magma, mineralización, géiser, termal")
+
+            # Si no corresponde a ninguna categoría anterior
+            print("¡Pensaste en fenómenos del subsuelo, como magma, mineralización, géiser o aguas termales!")
             return
-        
+
         r = pedir_si_no("Q4: ¿Es HIDROLÓGICO/ACUÁTICO?")
         if r == "s":
-            
-            r = pedir_si_no("Q5: ¿Está relacionado con MAREAS?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con el movimiento del agua en océanos o mares?")
             if r == "s":
-                print("HIDROLÓGICOS · MAREAS: marea alta, marea baja, maremoto")
+                r = pedir_si_no("Q6: ¿Es un cambio periódico del nivel del mar?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Se percibe solo en costas y genera inundaciones locales?")
+                    if r == "s":
+                        print("¡Pensaste en maremoto!")
+                    else:
+                        print("¡Pensaste en marea alta o baja!")
+                else:
+                    r = pedir_si_no("Q7: ¿Es flujo constante de agua en un río o mar?")
+                    if r == "s":
+                        print("¡Pensaste en corriente marina o fluvial!")
+                    else:
+                        print("¡Pensaste en remolino o vórtice!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con CORRIENTES?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con olas o el oleaje?")
             if r == "s":
-                print("HIDROLÓGICOS · CORRIENTES: corriente marina, corriente fluvial, remolino")
+                r = pedir_si_no("Q6: ¿Se forma por viento y rompe en la orilla?")
+                if r == "s":
+                    print("¡Pensaste en olas!")
+                else:
+                    r = pedir_si_no("Q6: ¿Provoca grandes movimientos de agua, como tsunamis o marejadas?")
+                    if r == "s":
+                        print("¡Pensaste en tsunami o marejada!")
+                    else:
+                        print("¡Pensaste en resaca!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con OLAS/MAR?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con el ciclo del agua o cambios de estado?")
             if r == "s":
-                print("HIDROLÓGICOS · OLAS: olas, tsunami, marejada, resaca")
+                r = pedir_si_no("Q6: ¿Es evaporación o condensación?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Ocurre en la atmósfera o nubes?")
+                    if r == "s":
+                        print("¡Pensaste en evaporación o condensación!")
+                    else:
+                        print("¡Pensaste en escorrentía superficial!")
+                else:
+                    r = pedir_si_no("Q7: ¿Cae como precipitación sobre la tierra?")
+                    if r == "s":
+                        print("¡Pensaste en lluvia o nieve!")
+                    else:
+                        print("¡Pensaste en escorrentía o infiltración de agua!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con el CICLO DEL AGUA?")
-            if r == "s":
-                print("HIDROLÓGICOS · CICLO DEL AGUA: evaporación, condensación, precipitación, escorrentía")
-                return
-            print("HIDROLÓGICOS · ESTADOS/EVENTOS: congelación, deshielo, inundación, sequía")
+
+            # Si no coincide con las anteriores
+            print("¡Pensaste en estados o eventos del agua, como congelación, deshielo, inundación o sequía!")
             return
-        
+
         r = pedir_si_no("Q4: ¿Es ASTRONÓMICO/ESPACIAL?")
         if r == "s":
-            
-            r = pedir_si_no("Q5: ¿Se refiere al ESPACIO/medio?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con el espacio vacío o medio interestelar?")
             if r == "s":
-                print("ASTRONÓMICOS · ESPACIO: vacío cósmico, medio interestelar, gravedad cero")
+                r = pedir_si_no("Q6: ¿Es un espacio completamente vacío sin cuerpos visibles?")
+                if r == "s":
+                    print("¡Pensaste en vacío cósmico!")
+                else:
+                    print("¡Pensaste en medio interestelar o gravedad cero!")
                 return
-            r = pedir_si_no("Q5: ¿Se refiere a CUERPOS/EVENTOS orbitales?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con cuerpos celestes?")
             if r == "s":
-                print("ASTRONÓMICOS · CUERPOS: planetas, sol, luna, estrellas")
+                r = pedir_si_no("Q6: ¿Es un cuerpo del sistema solar visible a simple vista?")
+                if r == "s":
+                    r = pedir_si_no("Q7: ¿Es la estrella que nos da luz durante el día?")
+                    if r == "s":
+                        print("¡Pensaste en el Sol!")
+                    else:
+                        r = pedir_si_no("Q7: ¿Es el satélite natural de la Tierra?")
+                        if r == "s":
+                            print("¡Pensaste en la Luna!")
+                        else:
+                            print("¡Pensaste en planetas o estrellas!")
+                else:
+                    print("¡Pensaste en otros cuerpos celestes del espacio, como asteroides o cometas!")
                 return
-            r = pedir_si_no("Q5: ¿Es un EVENTO astrofísico?")
+
+            r = pedir_si_no("Q5: ¿Es un evento astrofísico especial?")
             if r == "s":
-                print("ASTRONÓMICOS · EVENTOS: supernova, agujero negro, nebulosa, galaxia")
+                r = pedir_si_no("Q6: ¿Es explosivo o destructivo, liberando gran energía?")
+                if r == "s":
+                    print("¡Pensaste en supernova o agujero negro!")
+                else:
+                    print("¡Pensaste en nebulosa o galaxia!")
                 return
-            r = pedir_si_no("Q5: ¿Es un FENÓMENO LUMINOSO?")
+
+            r = pedir_si_no("Q5: ¿Es un fenómeno luminoso visible desde la Tierra?")
             if r == "s":
-                print("ASTRONÓMICOS · LUMINOSOS: aurora boreal, luz zodiacal, lluvia de estrellas")
+                r = pedir_si_no("Q6: ¿Ocurre en la atmósfera terrestre?")
+                if r == "s":
+                    print("¡Pensaste en aurora boreal!")
+                else:
+                    print("¡Pensaste en luz zodiacal o lluvia de estrellas!")
                 return
-            print("ASTRONÓMICOS · ORBITALES: rotación, traslación, perihelio, afelio")
+
+            # Si no coincide con las anteriores
+            print("¡Pensaste en fenómenos orbitales como rotación, traslación, perihelio o afelio!")
             return
-        
+
         r = pedir_si_no("Q4: ¿Es BIOLÓGICO/ECOLÓGICO?")
         if r == "s":
-            
-            r = pedir_si_no("Q5: ¿Está relacionado con CICLOS biológicos?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con ciclos de la vida de organismos?")
             if r == "s":
-                print("BIOLÓGICOS · CICLOS: fotosíntesis, respiración, descomposición")
+                r = pedir_si_no("Q6: ¿Ocurre dentro de plantas, como fotosíntesis?")
+                if r == "s":
+                    print("¡Pensaste en fotosíntesis!")
+                else:
+                    r = pedir_si_no("Q6: ¿Ocurre en animales, como respiración o descomposición?")
+                    if r == "s":
+                        print("¡Pensaste en respiración o descomposición!")
+                    else:
+                        print("¡Pensaste en otro ciclo biológico menos común!")
                 return
-            r = pedir_si_no("Q5: ¿Está relacionado con COMPORTAMIENTOS?")
+
+            r = pedir_si_no("Q5: ¿Está relacionado con comportamientos de seres vivos?")
             if r == "s":
-                print("BIOLÓGICOS · COMPORTAMIENTO: migración, hibernación, estivación, eclosión")
+                r = pedir_si_no("Q6: ¿Es comportamiento estacional o migratorio?")
+                if r == "s":
+                    print("¡Pensaste en migración, hibernación o estivación!")
+                else:
+                    print("¡Pensaste en eclosión u otro comportamiento biológico!")
                 return
-            r = pedir_si_no("Q5: ¿Es un FENÓMENO ECOLÓGICO?")
+
+            r = pedir_si_no("Q5: ¿Es un fenómeno ecológico entre organismos?")
             if r == "s":
-                print("BIOLÓGICOS · ECOLÓGICOS: sucesión, simbiosis, depredación, competencia")
+                r = pedir_si_no("Q6: ¿Involucra interacciones de cooperación?")
+                if r == "s":
+                    print("¡Pensaste en sucesión o simbiosis!")
+                else:
+                    print("¡Pensaste en depredación o competencia!")
                 return
-            print("BIOLÓGICOS · BIOLUMINISCENCIA: luz natural en seres vivos")
+
+            # Si no coincide con las anteriores
+            print("¡Pensaste en bioluminiscencia, luz natural en seres vivos!")
             return
-        
+
+        # Si no es biológico/ecológico
         print("NADA")
         return
-    
-   
+
     r = pedir_si_no("Q3: ¿Es una FORMA DE ENERGÍA?")
     if r == "s":
-        r = pedir_si_no("Q4: ¿Es TÉRMICA?")
+
+        r = pedir_si_no("Q4: ¿Es térmica, relacionada con calor o temperatura?")
         if r == "s":
-            print("ENERGÍA · TÉRMICA: calor, temperatura, conducción, convección, radiación")
+            r = pedir_si_no("Q5: ¿Se transfiere principalmente por conducción o convección?")
+            if r == "s":
+                print("¡Pensaste en conducción o convección!")
+            else:
+                print("¡Pensaste en calor, temperatura o radiación!")
             return
-        r = pedir_si_no("Q4: ¿Es ELÉCTRICA?")
+
+        r = pedir_si_no("Q4: ¿Es eléctrica, relacionada con electricidad o corriente?")
         if r == "s":
-            print("ENERGÍA · ELÉCTRICA: electricidad, corriente, voltaje, resistencia, circuito")
+            r = pedir_si_no("Q5: ¿Involucra componentes de circuito, voltaje o resistencia?")
+            if r == "s":
+                print("¡Pensaste en electricidad, corriente, voltaje o resistencia!")
+            else:
+                print("¡Pensaste en energía eléctrica general!")
             return
-        r = pedir_si_no("Q4: ¿Es MAGNÉTICA?")
+
+        r = pedir_si_no("Q4: ¿Es magnética, relacionada con campos magnéticos?")
         if r == "s":
-            print("ENERGÍA · MAGNÉTICA: magnetismo, campo magnético, electromagnetismo")
+            print("¡Pensaste en magnetismo o electromagnetismo!")
             return
-        r = pedir_si_no("Q4: ¿Es LUMINOSA/RADIANTE?")
+
+        r = pedir_si_no("Q4: ¿Es luminosa o radiante, relacionada con luz o fotones?")
         if r == "s":
-            print("ENERGÍA · LUMINOSA/RADIANTE: luz, fotones, espectro electromagnético, radiación")
+            print("¡Pensaste en luz, fotones o espectro electromagnético!")
             return
-        r = pedir_si_no("Q4: ¿Es SONORA?")
+
+        r = pedir_si_no("Q4: ¿Es sonora, relacionada con ondas o vibraciones?")
         if r == "s":
-            print("ENERGÍA · SONORA: sonido, onda sonora, eco, resonancia, ultrasonido")
+            r = pedir_si_no("Q5: ¿Se percibe como sonido normal o ultrasonido?")
+            if r == "s":
+                print("¡Pensaste en sonido, onda sonora, eco o resonancia!")
+            else:
+                print("¡Pensaste en ultrasonido!")
             return
-        r = pedir_si_no("Q4: ¿Es MECÁNICA?")
+
+        r = pedir_si_no("Q4: ¿Es mecánica, relacionada con movimiento o fuerza?")
         if r == "s":
-            print("ENERGÍA · MECÁNICA: movimiento, fuerza, trabajo, potencia, cinética, potencial")
+            r = pedir_si_no("Q5: ¿Es energía cinética o potencial?")
+            if r == "s":
+                print("¡Pensaste en cinética o potencial!")
+            else:
+                print("¡Pensaste en movimiento, trabajo o potencia!")
             return
-        r = pedir_si_no("Q4: ¿Es QUÍMICA?")
+
+        r = pedir_si_no("Q4: ¿Es química, relacionada con reacciones o combustión?")
         if r == "s":
-            print("ENERGÍA · QUÍMICA: reacción química, combustión, oxidación, fermentación")
+            r = pedir_si_no("Q5: ¿Es reacción química, oxidación o fermentación?")
+            if r == "s":
+                print("¡Pensaste en reacción química, combustión, oxidación o fermentación!")
+            else:
+                print("¡Pensaste en energía química general!")
             return
-        r = pedir_si_no("Q4: ¿Es NUCLEAR?")
+
+        r = pedir_si_no("Q4: ¿Es nuclear, relacionada con fisión, fusión o radiactividad?")
         if r == "s":
-            print("ENERGÍA · NUCLEAR: fisión, fusión, radiactividad, desintegración")
+            r = pedir_si_no("Q5: ¿Es fisión o fusión?")
+            if r == "s":
+                print("¡Pensaste en fisión o fusión nuclear!")
+            else:
+                print("¡Pensaste en radiactividad o desintegración!")
             return
-        print("ENERGÍA · CONCEPTOS COSMOLÓGICOS: energía oscura, materia oscura")
+
+        # Si no coincide con las anteriores
+        print("¡Pensaste en conceptos cosmológicos como energía oscura o materia oscura!")
         return
-    
-    
+
     r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Está relacionado con la ESTRUCTURA ATÓMICA?")
@@ -1336,7 +1536,7 @@ def plantas():
         else:
             r=pedir_si_no("Q6: ¿Es ornamental?")
             if r == "s":
-                print("Pensaste en una flor o arboles decorativos")
+                print("Pensaste en una flor o arbole decorativos")
             else:
                 r=pedir_si_no("Q7: ¿Se usa con fines medicinales o industriales?")
                 if r == "s":
