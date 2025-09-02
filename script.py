@@ -2,8 +2,6 @@
 #--------------------------------------------  RAMAS PRINCIPALES --------------------------------------------#
 def rama_abstracto():
     """Rama para conceptos abstractos e intangibles"""
-    print("\n--- CATEGORÍA: ABSTRACTOS/INTANGIBLES ---")
-    
     # EMOCIONES Y SENTIMIENTOS
     r = pedir_si_no("Q3: ¿Está relacionado con emociones o sentimientos?")
     if r == "s":
@@ -106,7 +104,7 @@ def rama_abstracto():
         if r == "s":
             r = pedir_si_no("Q5: ¿Se refiere al mero hecho de existir?")
             if r == "s":
-                print("ABSTRACTO: Existencia, Ser")
+                print("ABSTRACTO: Existencia, Ser o la vida")
             else:
                 r = pedir_si_no("Q6: ¿Es lo opuesto (ausencia total)?")
                 if r == "s":
@@ -1332,15 +1330,19 @@ def plantas():
                         print("No se logro advinar que oebsaste")
 
     else:
-        r=pedir_si_no("Q5: ¿Es ornamental (flores o de jardín)?")
+        r=pedir_si_no("Q5: ¿Tiene un tronco grueso de madera?")
         if r == "s":
-            print("Pensaste en una flor o arboles decorativos")
+            print("Pensaste en un árbol")
         else:
-            r=pedir_si_no("Q6: ¿Se usa con fines medicinales o industriales?")
+            r=pedir_si_no("Q6: ¿Es ornamental?")
             if r == "s":
-                print("pensaste en Manzanilla/Sabila ")
+                print("Pensaste en una flor o arboles decorativos")
             else:
-                print("pensaste en un tipo de planta muy poco comun")
+                r=pedir_si_no("Q7: ¿Se usa con fines medicinales o industriales?")
+                if r == "s":
+                    print("pensaste en Manzanilla/Sabila ")
+                else:
+                    print("pensaste en un tipo de planta muy poco comun")
 
 def hongos():
     r = pedir_si_no("Q1: ¿Es comestible sin riesgos para la salud?")
@@ -1676,7 +1678,7 @@ def obj_natural():#Q7
 def obj_artificial():#Q8
     
     # MÁQUINAS Y ELECTRÓNICOS
-    r = pedir_si_no("Q4: ¿Requiere electricidad para funcionar?")
+    r = pedir_si_no("Q4: ¿Requiere principalmente electricidad para funcionar?")
     if r == "s":
         
         # comunicación 
@@ -1730,6 +1732,7 @@ def obj_artificial():#Q8
                         print("Aspiradora")
                     else:
                         print("Otro aparato eléctrico")
+        return
     
     # ROPA Y ACCESORIOS
     elif pedir_si_no("Q5: ¿Se lleva puesto en el cuerpo?") == "s":
@@ -1865,6 +1868,7 @@ def obj_artificial():#Q8
                                     print("Cinturón")
                                 else:
                                     print("Otro accesorio")
+        return
     
     # VEHÍCULOS Y MEDIOS DE TRANSPORTE
     elif pedir_si_no("Q6: ¿Se usa para transportarse?") == "s":
@@ -1952,6 +1956,7 @@ def obj_artificial():#Q8
                             print("Canoa/Bote")
                     else:
                         print("Velero")
+
     # MUEBLES
     elif pedir_si_no("Q4: ¿Es un mueble?") == "s":
         
