@@ -346,7 +346,7 @@ def rama_fenomeno():
                 return
             r = pedir_si_no("Q5: ¿Se refiere a CUERPOS/EVENTOS orbitales?")
             if r == "s":
-                print("ASTRONÓMICOS · CUERPOS: eclipse, conjunción, oposición, tránsito")
+                print("ASTRONÓMICOS · CUERPOS: planetas, sol, luna, estrellas")
                 return
             r = pedir_si_no("Q5: ¿Es un EVENTO astrofísico?")
             if r == "s":
@@ -377,7 +377,7 @@ def rama_fenomeno():
             print("BIOLÓGICOS · BIOLUMINISCENCIA: luz natural en seres vivos")
             return
         
-        print("FENÓMENO NATURAL NO ESPECIFICADO")
+        print("NADA")
         return
     
    
@@ -418,8 +418,8 @@ def rama_fenomeno():
         print("ENERGÍA · CONCEPTOS COSMOLÓGICOS: energía oscura, materia oscura")
         return
     
-    # TERCER NIVEL: FENÓMENOS FÍSICOS FUNDAMENTALES
-    r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO fundamental?")
+    
+    r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Está relacionado con la ESTRUCTURA ATÓMICA?")
         if r == "s":
@@ -463,7 +463,7 @@ def rama_fenomeno():
                 return
             r = pedir_si_no("Q5: ¿ELECTROMAGNETISMO?")
             if r == "s":
-                print("FÍSICOS · ELECTROMAGNETISMO: campo EM, luz, electricidad, magnetismo")
+                print("FÍSICOS · ELECTROMAGNETISMO: campos electromagneticos, luz, electricidad, magnetismo")
                 return
             r = pedir_si_no("Q5: ¿NUCLEAR FUERTE?")
             if r == "s":
@@ -486,13 +486,13 @@ def rama_fenomeno():
             if r == "s":
                 print("CUÁNTICOS · ENTRELAZAMIENTO: no-localidad")
                 return
-            print("CUÁNTICOS · TÚNELES: efecto túnel cuántico")
+            print("CUÁNTICOS · TÚNELES: efecto túnel")
             return
         
         print("FENÓMENO FÍSICO FUNDAMENTAL NO ESPECIFICADO")
         return
     
-    # CUARTO NIVEL: FENÓMENOS QUÍMICOS
+    
     r = pedir_si_no("Q3: ¿Es un FENÓMENO QUÍMICO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Es una REACCIÓN?")
@@ -510,7 +510,7 @@ def rama_fenomeno():
         print("QUÍMICOS · PROPIEDADES: pH, conductividad, reactividad, catálisis")
         return
     
-    # QUINTO NIVEL: FENÓMENOS HUMANOS/SOCIALES (opcional)
+    
     r = pedir_si_no("Q3: ¿Es un FENÓMENO SOCIAL o HUMANO?")
     if r == "s":
         r = pedir_si_no("Q4: ¿Se refiere a GLOBALIZACIÓN?")
