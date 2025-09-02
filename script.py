@@ -540,7 +540,7 @@ def identificar_mamifero():  #salvajes mamiferos
     if r == "s":
         r = pedir_si_no("Q7: ¿Es felino?")
         if r == "s":
-            r = pedir_si_no("Q8: ¿Es muy grande?")
+            r = pedir_si_no("Q8: ¿Es un felino de gran tamaño (más grande que un perro común)?")
             if r == "s":
                 r = pedir_si_no("Q9: ¿Es un felino grande sin manchas visibles?")
                 if r == "s":
@@ -1334,7 +1334,7 @@ def plantas():
     else:
         r=pedir_si_no("Q5: ¿Es ornamental (flores o de jardín)?")
         if r == "s":
-            print("Pensaste en una flore o arboles decorativos")
+            print("Pensaste en una flor o arboles decorativos")
         else:
             r=pedir_si_no("Q6: ¿Se usa con fines medicinales o industriales?")
             if r == "s":
@@ -2417,7 +2417,7 @@ def main():
         return
 
     # Q4
-    r = pedir_si_no("Q5: ¿Es un fenómeno natural, un cuerpo celeste o una forma de energía (por ejemplo: lluvia, sol, luz, terremoto)?")
+    r = pedir_si_no("Q4: ¿Es un fenómeno natural, un cuerpo celeste o una forma de energía (por ejemplo: lluvia, sol, luz, terremoto)?")
     if r == "s":
         # Agotar rama Fenómenos / Cuerpos celestes / Energía
         rama_fenomeno()
@@ -2425,7 +2425,7 @@ def main():
         return
 
     # Q5
-    r = pedir_si_no("Q6: ¿Es un objeto inanimado o cosa tangible (sea natural o fabricada por humanos)?")
+    r = pedir_si_no("Q5: ¿Es un objeto inanimado o cosa tangible (sea natural o fabricada por humanos)?")
     if r == "s":
         # Agotar rama Objetos inanimados
         rama_objeto()
