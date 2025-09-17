@@ -10,7 +10,7 @@ sucursal_apertura_RE  = r"(apertura|cierre|abrir|cerrar|a qu[eé] hora)"
 sucursal_acciones_RE  = r"(pagar|recoger|enviar|tramite|permiten|que se puede|hacer en la sucursal)"
 
 # Regex con más variaciones y frases coloquiales
-tracking_RE   = r"(rastreo|tracking|seguimiento|localiza(r|ción)|dónde (está|anda)|ver.*paquete|saber.*paquete|donde va mi paquete|ubicaci[oó]n.*paquete|mi paquete|seguir.*paquete|cuando.*entregan.*paquete|paq(u|ue)te)"
+tracking_RE   = rastreo_RE = r"(rastreo|tracking|seguimiento|localiza(?:r|ción)|dónde (está|anda)|ver.*paquete|saber.*paquete|donde va mi paquete|ubicaci[oó]n.*paquete|mi paquete|seguir.*paquete|cuando.*entregan.*paquete|paq(?:u|ue)te|mi pedido|estado.*pedido|estado.*env[ií]o|c[oó]mo va.*(pedido|env[ií]o)|progreso.*(pedido|env[ií]o)|actualizaci[oó]n.*(pedido|env[ií]o)|ya (sal[ií]o|viene|lo enviaron)|a[uú]n no llega|todav[ií]a no llega|me urge saber)"
 pickup_RE     = r"(recogida|pickup|agendar (recogida|env[ií]o)|programar (env[ií]o|paquete)|quiero que lo recojan|pasen por mi paquete)"
 tarifa_RE     = r"(cotiza(r|ción)|precio|tarifa|costo|cuánto vale|cuánto cuesta|cuánto sale|quiero saber.*(cuesta|precio)|promociones|costos)"
 sucursal_RE = (sucursal_ubicacion_RE + "|" +sucursal_horario_RE   + "|" +sucursal_servicios_RE + "|" +sucursal_apertura_RE  + "|" +sucursal_acciones_RE)
@@ -158,7 +158,7 @@ while Salida:
         print("\nOpciones disponibles:")
         print("1. Rastreo de envíos")
         print("2. Agendar recogida")
-        print("3. Cotización / tarifas")
+        print("3. Cotización Envio")
         print("4. Localización de sucursales")
         print("5. Estado de aduanas")
         print("6. Entregas fallidas / reclamos")
@@ -214,47 +214,28 @@ while Salida:
     # Opciones
     if state == 1:
         tracking = input("Ingresa tu número de guía: ")
-        print(f"El envío con número {tracking} está en tránsito y llegará en 2 días hábiles.")
+        print(f"El envío con número {tracking} está en reparto y llegará en 2 días hábiles.")
         state = 0
 
+        extra_info = input("¿Quieres saber más información sobre tu envío? (sí/no): ").strip().lower()
+
+        if extra_info in ("si", "sí", "s","ok","Ok","OK","oK","Si","SI"):
+              print("\nDetalles de seguimiento:")
+              print("- Dejado en sucursal hace 24 hrs")
+              print("- En tránsito en Cuautitlán Izcali hace 12 hrs")
+              print("- Llegando a centro de reparto local")
+              # después de dar más info, regresa al menú principal
+              print("\n¿Algo más en lo que podamos ayudarte?")
+              state = 0
+        else:
+              # si no quiere más info, simplemente regresa al menú principal
+              print("\n¿Algo más en lo que podamos ayudarte?")
+              state = 0
+
     if state == 2:
-        print("Vamos a agendar una recogida de paquete.")
-
-        # Pedir fecha
-        fecha_str = input("Ingresa la fecha para la recogida (YYYY-MM-DD): ").strip()
-        try:
-            fecha = datetime.strptime(fecha_str, "%Y-%m-%d").date()
-            hoy = datetime.now().date()
-            max_fecha = hoy.replace(day=hoy.day) + (datetime.now() - datetime.now())  # placeholder
-            max_fecha = hoy.replace(day=hoy.day)  # ajustable si quieres límite
-            # Validación básica
-            if fecha < hoy:
-                print("No puedes agendar una fecha pasada.")
-                state = 0
-                continue
-            elif (fecha - hoy).days > 30:
-                print("Solo es posible agendar dentro de los próximos 30 días.")
-                state = 0
-                continue
-        except ValueError:
-            print("Formato inválido de fecha. Usa YYYY-MM-DD (ej: 2025-09-20).")
-            state = 0
-            continue
-
-        # Pedir hora
-        hora_str = input("Ingresa la hora para la recogida (HH:MM en formato 24h, ejemplo 14:30): ").strip()
-        try:
-            hora = datetime.strptime(hora_str, "%H:%M").time()
-            if hora.hour < 9 or hora.hour > 18:
-                print("Nuestro horario de recolección es de 09:00 a 18:00.")
-                state = 0
-                continue
-        except ValueError:
-            print("Formato inválido de hora. Usa HH:MM (ej: 14:30).")
-            state = 0
-            continue
-
-        print(f"Recogida programada para el {fecha} a las {hora_str}. Un mensajero irá a tu dirección registrada.")
+        fecha = input("Ingresa la fecha para la recogida (YYYY-MM-DD): ")
+        print(f"Recogida programada para el {fecha}. Un mensajero irá a tu dirección registrada.")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         state = 0
 
     if state == 3:
@@ -262,6 +243,7 @@ while Salida:
         destino = input("Destino: ")
         peso = input("Peso (kg): ")
         print(f"El envío de {origen} a {destino}, {peso} kg, tiene un costo aproximado de $500 MXN y entrega en 3 días.")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         state = 0
 
     if state == 4:
@@ -309,27 +291,34 @@ while Salida:
                 re.search(sucursal_apertura_RE, consulta, re.IGNORECASE) or
                 re.search(sucursal_acciones_RE, consulta, re.IGNORECASE)):
             print("Lo siento, no entendí tu solicitud sobre sucursales. Puedes preguntar por ubicación, horarios, servicios o trámites.")
-
+        print("\n¿Algo más en lo que podamos ayudarte?")
         state = 0
 
     if state == 5:
         print("Tu envío está retenido en aduanas. Se requiere el pago de impuestos y documentación adicional.")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         state = 0
 
     if state == 6:
-        print("Detectamos un intento de entrega fallido. Puedes reprogramar ingresando a tu portal DHL o llamando al 01-800-DHL.")
+        guia = input("Por favor ingresa tu número de guía: ")
+        print(f"Detectamos un intento de entrega fallido para el envío {guia}.")
+        print("Puedes reprogramar ingresando a tu portal DHL o llamando al 01-800-DHL.")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         state = 0
 
     if state == 7:
         destino = input("Destino del paquete: ")
         peso = input("Peso (kg): ")
         print(f"Guía generada para envío a {destino}, peso {peso} kg. Código: DHL{datetime.now().strftime('%H%M%S')}")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         state = 0
 
     if state == 8:
         print("Te conectamos con un agente humano... por favor espera.")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         Salida = False
 
     if state == 9:
         print("Gracias por usar el Chatbot DHL. Hasta pronto.")
+        print("\n¿Algo más en lo que podamos ayudarte?")
         Salida = False
