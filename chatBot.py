@@ -218,8 +218,43 @@ while Salida:
         state = 0
 
     if state == 2:
-        fecha = input("Ingresa la fecha para la recogida (YYYY-MM-DD): ")
-        print(f"Recogida programada para el {fecha}. Un mensajero irá a tu dirección registrada.")
+        print("Vamos a agendar una recogida de paquete.")
+
+        # Pedir fecha
+        fecha_str = input("Ingresa la fecha para la recogida (YYYY-MM-DD): ").strip()
+        try:
+            fecha = datetime.strptime(fecha_str, "%Y-%m-%d").date()
+            hoy = datetime.now().date()
+            max_fecha = hoy.replace(day=hoy.day) + (datetime.now() - datetime.now())  # placeholder
+            max_fecha = hoy.replace(day=hoy.day)  # ajustable si quieres límite
+            # Validación básica
+            if fecha < hoy:
+                print("No puedes agendar una fecha pasada.")
+                state = 0
+                continue
+            elif (fecha - hoy).days > 30:
+                print("Solo es posible agendar dentro de los próximos 30 días.")
+                state = 0
+                continue
+        except ValueError:
+            print("Formato inválido de fecha. Usa YYYY-MM-DD (ej: 2025-09-20).")
+            state = 0
+            continue
+
+        # Pedir hora
+        hora_str = input("Ingresa la hora para la recogida (HH:MM en formato 24h, ejemplo 14:30): ").strip()
+        try:
+            hora = datetime.strptime(hora_str, "%H:%M").time()
+            if hora.hour < 9 or hora.hour > 18:
+                print("Nuestro horario de recolección es de 09:00 a 18:00.")
+                state = 0
+                continue
+        except ValueError:
+            print("Formato inválido de hora. Usa HH:MM (ej: 14:30).")
+            state = 0
+            continue
+
+        print(f"Recogida programada para el {fecha} a las {hora_str}. Un mensajero irá a tu dirección registrada.")
         state = 0
 
     if state == 3:
